@@ -1,9 +1,8 @@
 
 import { render } from 'react-dom'
+import { App } from './App'
 
 render(
-    <div>
-        poir90pi3rt9r034i0t9NIGGGAAA
-    </div>,
+    <App />,
     document.getElementById('root')
 )
