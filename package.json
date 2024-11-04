@@ -14,7 +14,7 @@
     "@types/node": "^22.8.7",
     "@types/webpack": "^5.28.5",
     "html-webpack-plugin": "^5.5.0",
-    "ts-loader": "^9.2.6",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5",
     "webpack": "^5.69.1",
