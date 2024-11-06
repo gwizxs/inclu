@@ -4,12 +4,13 @@ import { AboutPageAsync } from "../pages/About/About.async";
 import { Suspense } from "react";
 import '../styles/index.scss'
 import { useTheme } from "../theme/useTheme";
+import { classNames } from "../helpers/classNames/classNames";
 
 export const AppRouter = () => {
     const {theme, toggleTheme} = useTheme();
 
     return (
-        <div className={`app ${theme || 'normal'}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>TOGGLE</button>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
@@ -23,3 +24,4 @@ export const AppRouter = () => {
     );
 };
 
+ export default AppRouter
