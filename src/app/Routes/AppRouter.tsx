@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { MainPageAsync } from "pages/Main/Main.async";
-import { AboutPageAsync } from "pages/About/About.async";
+import { MainPageAsync } from "pages/Main";
+import { AboutPageAsync } from "pages/About";
 import { Suspense } from "react";
 import '../styles/index.scss'
 import { classNames } from "helpers/classNames/classNames";
