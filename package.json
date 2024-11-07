@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
     "@types/node": "^22.8.7",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
