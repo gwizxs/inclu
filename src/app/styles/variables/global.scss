@@ -9,9 +9,18 @@
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-
-
-    //size\
+    //size
 
     --navbar-height: 50px;
+}
+
+
+.content-page {
+    display: flex;
+
+}
+
+.page-wrapper {
+    flex-grow: 1;
+    padding: 20px;
 }
