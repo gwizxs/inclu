@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type Mods = Record<string, boolean | string>
 const obg:Mods = {

@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log(ijweriofg)})();
+(()=>{"use strict";console.log('')})();
