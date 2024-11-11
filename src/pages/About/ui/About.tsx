@@ -6,7 +6,7 @@ export const About = () => {
 
     return (
         <div>
-          {t('О сайте')}
+            {t('О сайте')}
         </div>
     )
 }
