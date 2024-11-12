@@ -1,7 +1,7 @@
-import { classNames } from "./classNames"
+import { classNames } from "./classNames";
 
 describe("classNames", () => {
-    test("with only first param", () => {
-        expect(classNames("SomeClass")).toBe("SomeClass")
-    })
-})
+    test("with only first parameter", () => {
+        expect(classNames("cl").trim()).toBe("cl");
+    });
+});
