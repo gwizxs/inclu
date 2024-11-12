@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-
-import type {Config} from 'jest';
-
+import {Config} from 'jest'
+  
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -17,6 +17,8 @@ const config: Config = {
 
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
+
+    
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -146,7 +148,7 @@ const config: Config = {
     // snapshotSerializers: [],
 
     // The test environment that will be used for testing
-    testEnvironment: "jsdom",
+    testEnvironment: "jest-environment-jsdom",
 
     // Options that will be passed to the testEnvironment
     // testEnvironmentOptions: {},

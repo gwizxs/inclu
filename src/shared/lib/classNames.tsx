@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 type Mods = Record<string, boolean | string>
-const obg:Mods = {
-    'hovered': false,
-}
 
 export function classNames(cl: string, mods: Mods = {}, additional: string[] = []): string {
     return [
