@@ -4,6 +4,7 @@
  * https://jestjs.io/docs/configuration
  */
 import {Config} from 'jest'
+import path from 'path';
   
 const config: Config = {
     // All imported modules in your tests should be mocked automatically
@@ -129,7 +130,8 @@ const config: Config = {
     setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
 
     "moduleNameMapper": {
-        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+        '\\.(svg)': path.resolve(__dirname, 'jestEmpty.tsx')
     },
 
     // A list of paths to directories that Jest should use to search for files in

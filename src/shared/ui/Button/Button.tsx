@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames"
+import { classNames } from "shared/lib/ClassNames/classNames"
 import s from './Button.module.scss'
 import { FC } from "react"
 
