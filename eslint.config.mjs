@@ -1,7 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import pluginReact, { rules } from "eslint-plugin-react";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -33,6 +33,21 @@ export default [
             'import/extensions': 'off',
             'import/no-extraneous-dependencies': 'off',
             'no-underscore-dangle': 'off',
+            'i18next/no-literal-string': [
+                'error',
+                {
+                    markupOnly: true,
+                    ignoreAttribute: ['data-testid'],
+                }
+            ],
+            'overrides': [
+                {
+                    files: ['**/src/**/*.test.{ts,tsx}'],
+                    rules: {
+                        'i18next/no-literal-string': 'off',
+                    }
+                }
+            ]
 
             // ============= THIS IS ERRORS IN BUILDS ================
             // ============= TO DO: ADD BUILD IN GITIGNORE  =================
