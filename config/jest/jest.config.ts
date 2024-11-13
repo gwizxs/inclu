@@ -80,16 +80,16 @@ const config: Config = {
     // ],
 
     // An array of file extensions your modules use
-    // moduleFileExtensions: [
-    //   "js",
-    //   "mjs",
-    //   "cjs",
-    //   "jsx",
-    //   "ts",
-    //   "tsx",
-    //   "json",
-    //   "node"
-    // ],
+    moduleFileExtensions: [
+        "js",
+        "mjs",
+        "cjs",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node"
+    ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -126,6 +126,11 @@ const config: Config = {
 
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
+    setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+
+    "moduleNameMapper": {
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
 
     // A list of paths to directories that Jest should use to search for files in
     // roots: [
@@ -155,7 +160,9 @@ const config: Config = {
 
     // Adds a location field to test results
     // testLocationInResults: false,
-
+    modulePaths: [
+        '<rootDir>/src',
+    ],
     // The glob patterns Jest uses to detect test files
     testMatch: [
         '<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)',

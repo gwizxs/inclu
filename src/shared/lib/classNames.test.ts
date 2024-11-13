@@ -1,4 +1,4 @@
-import { classNames } from "./classNames";
+import { classNames } from "shared/lib/classNames";
 
 describe("classNames", () => {
     test("with only first parameter", () => {
@@ -25,5 +25,4 @@ describe("classNames", () => {
         expect(classNames("cl", { hovered: true, scrollable: undefined }, ['class1', 'class2']).trim()).toBe(expected);
     })
 });
-
 
