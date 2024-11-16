@@ -8,3 +8,14 @@
     padding: 0;
     outline: none;
 }
+.outline {
+    padding: 10px 15px;
+    border: var(--primary-color) 1px solid;
+    color: var(--primary-color);
+    background: none;
+    background-color:  var(--primary-color);;
+}
+
+.outline:hover {
+    background: #e7e7e7;
+}
