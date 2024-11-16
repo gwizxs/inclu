@@ -27,3 +27,7 @@ jobs:
       run: npx stylelint '**/*.scss' --fix
     - name: run test unit
       run: npm run unit
+    - name: build storybook
+      run: npm run storybook:build
+    - name: screenshot testing
+      run: npm run test:ui:ci
