@@ -1,18 +1,31 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+push:
+  branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  Explore-GitHub-Actions:
+  pipeline: 
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+    uses: actions/setup-node@v1
+    with:
+      node-version: ${{ matrix.node-version }}
+    - name: Install modules
+      run: npm install
+    - name: Run prod project
+      run: npm run build:prod
+    - name: linting ts
+      run: npx eslint . --fix
+    - name: linting scss
+      run: npx stylelint '**/*.scss' --fix
+    - name: run test unit
+      run: npm run unit
+    - name: run storybook
+      run: npm run unit
