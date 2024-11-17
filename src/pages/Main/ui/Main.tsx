@@ -6,7 +6,7 @@ export const Main = () => {
     
     return (
         <div>
-            {t('Главная')}
+            {t('Главная страница')}
         </div>
     )
 }
