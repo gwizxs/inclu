@@ -1,23 +1,37 @@
-import { classNames } from "shared/lib/ClassNames/classNames";
-import s from './Navbar.module.scss'
-import AppLink, { AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { classNames } from 'shared/lib/ClassNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Modal } from 'shared/ui/Modal/Modal';
+import  { useCallback, useState } from 'react';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import cls from './Navbar.module.scss';
 
-
-
-interface INavbarProps {
-    className?: string
+interface NavbarProps {
+    className?: string;
 }
 
-export const Navbar = ({ className }: INavbarProps) => {
+export const Navbar = ({ className }: NavbarProps) => {
+    const { t } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
+
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
 
     return (
-        <div className={classNames(s.Navbar, {}, [className])}>
-            <div className={s.links}>
-                /
-            </div>
+        <div className={classNames(cls.Navbar, {}, [className])}>
+            <Button
+                theme={ThemeButton.BACKGROUND_INVERTED}
+                className={cls.links}
+                onClick={onToggleModal}
+            >
+                {t('Войти')}
+            </Button>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                {/* eslint-disable-next-line */}
+                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')}
+            </Modal>
         </div>
-    )
-}
+    );
+};
 
 export default Navbar;
-
