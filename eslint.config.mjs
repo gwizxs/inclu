@@ -18,11 +18,10 @@ export default [
             react: {
                 version: "detect", 
             },
+            plugins: [
+                "react-hooks",
+            ],
         },
-        plugins: [
-            "react",
-            "react-hooks",
-        ],
         rules: {
             '@typescript-eslint/naming-convention': 'off',
             'react/jsx-indent': [2, 4],

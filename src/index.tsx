@@ -9,13 +9,13 @@ import { StoreProvider } from "app/providers/StoreProvider";
 
 render(
     <StoreProvider>
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App/>
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App/>
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
     </StoreProvider>,
     document.getElementById('root')
 )

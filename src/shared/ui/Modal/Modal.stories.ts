@@ -12,19 +12,19 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const Primary: Story = {
-   args: {
-    children: 'Text',
-    isOpen: true
-   }
+    args: {
+        children: 'Text',
+        isOpen: true
+    }
 };
 
 export const Dark: Story = {
     args: {
-     children: 'Text',
-     isOpen: true
+        children: 'Text',
+        isOpen: true
     }
- };
+};
  
- Dark.decorators = [
-     (Story) => ThemeDecorator(Theme.DARK)(Story),
- ]
+Dark.decorators = [
+    (Story) => ThemeDecorator(Theme.DARK)(Story),
+]

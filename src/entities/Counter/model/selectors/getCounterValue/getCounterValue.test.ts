@@ -9,4 +9,4 @@ describe('getCounterValue', () => {
             counter: { value: 10}
         }
         expect(getCounterValue(state as StateSchema)).toEqual(10);
- })})
+    })})
