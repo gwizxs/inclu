@@ -19,6 +19,10 @@ export default [
                 version: "detect", 
             },
         },
+        plugins: [
+            "react",
+            "react-hooks",
+        ],
         rules: {
             '@typescript-eslint/naming-convention': 'off',
             'react/jsx-indent': [2, 4],
@@ -36,6 +40,8 @@ export default [
             'import/extensions': 'off',
             'import/no-extraneous-dependencies': 'off',
             'no-underscore-dangle': 'off',
+            "react-hooks/exhaustive-deps": "error",
+            "react-hooks/rules-of-hooks": "error",
 
             // ============= THIS IS ERRORS IN BUILDS ================
             // ============= TO DO: ADD BUILD IN GITIGNORE  =================
