@@ -1,28 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {Input} from './Input';
+import {LoginForm} from './LoginForm';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
-const meta: Meta<typeof Input> = {
-    title: 'shared/Input',
-    component: Input,
+const meta: Meta<typeof LoginForm> = {
+    title: 'features/LoginForm',
+    component: LoginForm,
 }
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
-    args: {
-        placeholder: 'Text',
-        value: '12344'
-    }
+
 };
 
 export const Dark: Story = {
-    args: {
-        placeholder: 'Text',
-        value: '12344'
-    }
 };
  
 Dark.decorators = [
