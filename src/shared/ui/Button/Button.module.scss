@@ -49,3 +49,9 @@
 .square.size_xl {
     font: var(--font-xl);
 }
+
+.disabled {
+    opacity: 0.1;
+    cursor:auto;
+    pointer-events: none;
+}
