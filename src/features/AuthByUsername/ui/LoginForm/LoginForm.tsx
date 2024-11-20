@@ -9,7 +9,6 @@ import { loginActions } from "../../model/slice/LoginSlice";
 import { getLoginState } from "../../model/selectors/GetLoginState/GetLoginState";
 import {loginByUsername} from "../../model/services/loginByUsername/loginByUsername";
 import Text, { TextTheme } from "shared/ui/Text/Text";
-import { text } from "stream/consumers";
 
 interface ILoginFormProps  {
     className?: string;
