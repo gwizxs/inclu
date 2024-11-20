@@ -41,6 +41,7 @@ export default [
             'no-underscore-dangle': 'off',
             "react-hooks/exhaustive-deps": "error",
             "react-hooks/rules-of-hooks": "error",
+            "react/display-name": "off",
 
             // ============= THIS IS ERRORS IN BUILDS ================
             // ============= TO DO: ADD BUILD IN GITIGNORE  =================

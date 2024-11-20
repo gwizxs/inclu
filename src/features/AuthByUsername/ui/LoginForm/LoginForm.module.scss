@@ -10,15 +10,9 @@
 
 .loginBtn {
     padding: 10px 20px;
-    background-color: #1b147a;
     border-radius: 5px;
-    color: #fff;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
     margin-left: auto;
-
-    &:hover {
-        background-color: #2e22d8;
-    }
 }
