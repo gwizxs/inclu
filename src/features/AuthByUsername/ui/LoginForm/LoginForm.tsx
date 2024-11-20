@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { loginActions } from "../../model/slice/LoginSlice";
 import { getLoginState } from "../../model/selectors/GetLoginState/GetLoginState";
+import {loginByUsername} from "../../model/services/loginByUsername/loginByUsername";
+import { get } from "http";
 
 interface ILoginFormProps  {
     className?: string;
@@ -16,6 +18,7 @@ export const LoginForm= memo(({className}: ILoginFormProps) => {
     const {t} = useTranslation()
     const dispatch = useDispatch()
     const loginForm = useSelector(getLoginState);
+    const {username, password} = useSelector(getLoginState);
 
     const onChangeUsername = useCallback((value: string) =>
         dispatch(loginActions.setUsername(value)),
@@ -26,8 +29,8 @@ export const LoginForm= memo(({className}: ILoginFormProps) => {
     [dispatch]);
 
     const onLoginClick = useCallback(() => {
-        //
-    }, [])
+        dispatch(loginByUsername({ username, password }));
+    }, [dispatch, username, password]);
     
     return (
         <section className={classNames(s.LoginForm, {}, [className])}>
