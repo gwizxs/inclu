@@ -26,8 +26,13 @@ export const Dark: Story = {
 
 Light.decorators = [
     (Story) => ThemeDecorator(Theme.LIGHT)(Story),
+    StoreDecorator({
+    })
 ]
 
 Dark.decorators = [
     (Story) => ThemeDecorator(Theme.DARK)(Story),
+    StoreDecorator({
+        user: {AuthData: {}}
+    })
 ]
