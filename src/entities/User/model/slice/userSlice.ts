@@ -9,7 +9,14 @@ export const UserSlice = createSlice({
     reducers: {
         setAuthData: (state, action: PayloadAction<User>) => {
             state.AuthData = action.payload
-        }
+        },
+        initAuthData: (state, action: PayloadAction<User>) => {
+            const user = localStorage.getItem('user');
+            if (user) {
+                state.AuthData = JSON.parse(user);
+            }
+            state.AuthData = action.payload
+        },
     },
 });
 

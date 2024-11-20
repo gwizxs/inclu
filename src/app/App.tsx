@@ -2,10 +2,16 @@ import { classNames } from 'shared/lib/ClassNames/classNames';
 import { AppRouter } from './Routes';
 import  {Navbar}  from "widgets/Navbar";
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense } from 'react';
-import 'app/styles/index.scss'
+import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { UserActions } from 'entities/User';
 
-const App = () => {
+function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(UserActions.initAuthData());
+    }, [dispatch])
 
     return (
         <div className={classNames('app', {}, [])}>
