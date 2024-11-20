@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { UserSchema } from '../types/user';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { User, UserSchema } from '../types/user';
 
 const initialState: UserSchema = {};
 
@@ -7,6 +7,9 @@ export const UserSlice = createSlice({
     name: 'User',
     initialState,
     reducers: {
+        setAuthData: (state, action: PayloadAction<User>) => {
+            state.AuthData = action.payload
+        }
     },
 });
 
