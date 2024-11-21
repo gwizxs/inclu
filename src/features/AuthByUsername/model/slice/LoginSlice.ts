@@ -3,9 +3,9 @@ import { LoginSchema } from '../types/loginSchema';
 import {loginByUsername} from '../services/loginByUsername/loginByUsername';
 
 const initialState: LoginSchema = {
+    isLoading: false,
     username: '',
     password: '',
-    isLoading: false,
 };
 
 export const LoginSlice = createSlice({
