@@ -3,12 +3,13 @@ import s from './LoginForm.module.scss'
 import { useTranslation } from "react-i18next";
 import Button, { ThemeButton } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
-import { memo, useCallback } from "react";
-import { loginActions } from "../../model/slice/LoginSlice";
+import { useDispatch, useSelector, useStore } from "react-redux";
+import { memo, useCallback, useEffect } from "react";
+import { loginActions, loginReducer } from "../../model/slice/LoginSlice";
 import { getLoginState } from "../../model/selectors/GetLoginState/GetLoginState";
 import {loginByUsername} from "../../model/services/loginByUsername/loginByUsername";
 import Text, { TextTheme } from "shared/ui/Text/Text";
+import { ReduxStoreWithManager } from "app/providers/StoreProvider/config/StateSchema";
 
 interface ILoginFormProps  {
     className?: string;
@@ -17,6 +18,18 @@ interface ILoginFormProps  {
 export const LoginForm= memo(({className}: ILoginFormProps) => {
     const {t} = useTranslation()
     const dispatch = useDispatch()
+    const store = useStore() as ReduxStoreWithManager
+
+    // монтируем и демонтируем слайс
+    useEffect(() => {
+        store.reducerManager.add('loginForm', loginReducer)
+
+        return () => {
+            store.reducerManager.remove('loginForm')
+        }
+    }, []) 
+
+
     const loginForm = useSelector(getLoginState);
     const {
         username,
