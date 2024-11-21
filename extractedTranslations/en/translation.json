@@ -1,25 +1,22 @@
 {
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
-    " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
-      "": ""
-    }
-  },
   "decrement": "decrement",
   "increment": "increment",
-  "Введите username": "Введите username",
-  "Введите пароль": "Введите пароль",
-  "Войти": "Войти",
-  "Вы ввели неверный логин или пароль": "Вы ввели неверный логин или пароль",
-  "Выход": "",
-  "Главная": "Главная",
-  "Главная страница": "",
-  "Логин": "",
-  "Неправильный логин или пароль": "",
-  "О сайте": "О сайте",
-  "Обновить страницу": "Обновить страницу",
-  "Пароль": "",
-  "Произошла ошибка": "Произошла ошибка",
-  "Страница не найдена": "Страница не найдена",
-  "Форма авторизации": "",
-  "Язык": "Язык"
+  "Введите username": "Enter your username",
+  "Введите пароль": "Enter your password",
+  "Войти": "Sign in",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Выйти": "Sign out",
+  "Главная": "Main",
+  "Главная страница": "Main Page",
+  "Логин": "Login",
+  "Неправильный логин или пароль": "Incorrect login or password",
+  "О сайте": "About",
+  "Обновить страницу": "Update page",
+  "Пароль": "Password",
+  "Произошла ошибка": "An error occurred",
+  "Страница не найдена": "Page not found",
+  "Форма авторизации": "Authorization form",
+  "Язык": "Language",
+    "(": "("
 }
+

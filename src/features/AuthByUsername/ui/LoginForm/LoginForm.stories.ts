@@ -19,9 +19,6 @@ export const Primary: Story = {
 export const Dark: Story = {
 };
  
-Dark.decorators = [
-    (Story) => ThemeDecorator(Theme.DARK)(Story),
-]
 
 
 Primary.decorators = [
@@ -30,7 +27,8 @@ Primary.decorators = [
             username: '123',
             password: '123'
         }
-    })
+    }),
+    ThemeDecorator(Theme.LIGHT)
 ]
 
 Dark.decorators = [
@@ -39,5 +37,6 @@ Dark.decorators = [
             username: '123',
             password: '123'
         }
-    })
+    }),
+    ThemeDecorator(Theme.DARK)
 ]
