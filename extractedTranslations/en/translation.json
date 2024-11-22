@@ -1,4 +1,5 @@
 {
+  "(": "(",
   "decrement": "decrement",
   "increment": "increment",
   "Введите username": "Enter your username",
@@ -14,9 +15,9 @@
   "Обновить страницу": "Update page",
   "Пароль": "Password",
   "Произошла ошибка": "An error occurred",
+  "Профиль": "Профиль",
   "Страница не найдена": "Page not found",
   "Форма авторизации": "Authorization form",
-  "Язык": "Language",
-    "(": "("
+  "Язык": "Language"
 }
 

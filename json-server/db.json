@@ -3,19 +3,19 @@
     {
       "id": "1",
       "title": "json-server",
-      "userId": 1
+      "userId": "1"
     },
     {
       "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "comments": [
     {
       "id": "1",
       "body": "some comment",
-      "postId": 1
+      "postId": "1"
     }
   ],
   "users": [
@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Самса",
+    "lastname": "Самсанович",
+    "age": 123,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://yt3.googleusercontent.com/55EbXI9IGQcsRFi1vufmnLNKFDkk103h4tyXxAOQpPhg1xrS3imonEJPzCX64Z9aDf7SLnwf=s900-c-k-c0x00ffffff-no-rj"
+  }
 }
