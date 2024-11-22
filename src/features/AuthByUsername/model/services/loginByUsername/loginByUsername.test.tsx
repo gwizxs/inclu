@@ -3,6 +3,7 @@ import loginByUsername from "./loginByUsername";
 import { Dispatch } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoreProvider";
 import { UserActions } from "entities/User";
+import { TestAsyncThunk } from "shared/lib/test/testAsyncThunk/testAsyncThunk";
 
 jest.mock('axios')
 
@@ -19,11 +20,14 @@ describe('loginByUsername.test', () => {
     test('success login', async () => {
         const UserValue =  { username: '123', id: '1' } 
         mockedAxios.post.mockReturnValue(Promise.resolve({ data: UserValue }));
-        const action = loginByUsername({ username: '123', password: '123' });
-        const result = await action(dispatch, getState, undefined);
 
-        expect(dispatch).toHaveBeenCalledWith(UserActions.setAuthData(UserValue));
-        expect(dispatch).toHaveBeenCalledTimes(3);
+
+        const thunk = new TestAsyncThunk(loginByUsername);
+        const result = await thunk.callThunk({ username: '123', password: '123' });
+
+
+        expect(thunk.dispatch).toHaveBeenCalledWith(UserActions.setAuthData(UserValue));
+        expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(mockedAxios.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(UserValue);
@@ -31,11 +35,13 @@ describe('loginByUsername.test', () => {
 
     test('error login 403', async () => {
         mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
-        const action = loginByUsername({ username: '123', password: '123' });
-        const result = await action(dispatch, getState, undefined);
+        
+
+        const thunk = new TestAsyncThunk(loginByUsername);
+        const result = await thunk.callThunk({ username: '123', password: '123' });
         
         expect(mockedAxios.post).toHaveBeenCalled();
-        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toBe('error');
     });
