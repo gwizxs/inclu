@@ -20,8 +20,9 @@
 
 .collapseBtn {
     position: absolute;
-    right: -32px;
-    bottom: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .items {

@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 
-export const About = () => {
+export const About = memo(() => {
     const {t} = useTranslation();
 
     return (
@@ -9,6 +10,6 @@ export const About = () => {
             {t('О сайте')}
         </div>
     )
-}
+})
 
 export default About;

@@ -1,10 +1,10 @@
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "shared/ui/Input/Input";
 
 
-export const Main = () => {
+export const Main = memo(() => {
     const {t} = useTranslation();
     const [value, setValue] = useState('');
 
@@ -18,5 +18,5 @@ export const Main = () => {
             <Input value={value} onChange={onChange} placeholder="введите текст"></Input>
         </div>
     )
-}
+});
 export default Main;

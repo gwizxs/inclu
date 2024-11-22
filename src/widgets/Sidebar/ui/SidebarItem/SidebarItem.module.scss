@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.item:first-child {
+    margin-top: 50px;
+}
+
 .link {
     margin-left: 10px;
     opacity: 1;
