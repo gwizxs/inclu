@@ -7,12 +7,13 @@ import { classNames } from 'shared/lib/ClassNames/classNames';
 import { useTranslation } from 'react-i18next';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
 import Text from 'shared/ui/Text/Text';
+import { Input } from 'shared/ui/Input/Input';
 
-interface ILoginModalProps  {
+interface ILoginModalProps {
     className?: string;
 }
 
-export const  ProfileCard = (props: ILoginModalProps) => {
+export const ProfileCard = (props: ILoginModalProps) => {
     const { t } = useTranslation('profile')
     const data = useSelector(getProfileData)
     const isLoading = useSelector(getProfileIsLoading)
@@ -23,14 +24,26 @@ export const  ProfileCard = (props: ILoginModalProps) => {
     } = props
 
     return (
-        <div className={classNames(s.LoginModal, {}, [className])}>
-            <div>
+        <div className={classNames(s.ProfileCard, {}, [className])}>
+            <div className={s.header}>
                 <Text title={t('Профиль')} />
                 <Button
-                    theme={ThemeButton.BACKGROUND_INVERTED}
+                    className={s.editBtn}
+                    theme={ThemeButton.BACKGROUND}
+
                 >
                     {t('Редактировать')}
                 </Button>
+            </div>
+            <div className={s.data}>
+                <Input
+                    value={data?.first}
+                    placeholder={t('Имя')}
+                    className={s.input} />
+                <Input
+                    value={data?.lastname}
+                    placeholder={t('Фамилия')}
+                    className={s.input} />
             </div>
         </div>
     )
