@@ -14,7 +14,7 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const authData = useSelector(getUserAuthData);
+    const AuthData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
     const onCloseModal = useCallback(() => {
@@ -29,7 +29,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(UserActions.logout());
     }, [dispatch]);
 
-    if (authData) {
+    if (AuthData) {
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <Button

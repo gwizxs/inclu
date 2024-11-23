@@ -5,9 +5,11 @@ import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActions } from 'entities/User';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(UserActions.initAuthData());
