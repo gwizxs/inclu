@@ -1,28 +1,29 @@
-import { SVGProps, VFC } from "react";
-import { RoutePath } from "shared/config/routerConfig/routerConfig";
-import AboutIcon20 from 'shared/assets/icons/about-20-20.svg'
-import MainIcon20 from 'shared/assets/icons/main-20-20.svg'
-import ProfileIcon20 from 'shared/assets/icons/profile-20-20.svg'
-export interface SidebarItemCom {
+import React from 'react';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AboutIcon from 'shared/assets/icons/about-20-20.svg';
+import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
+
+export interface SidebarItemType {
     path: string;
     text: string;
-    icon: VFC<SVGProps<SVGSVGElement>>
+    Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
-export const sidebarItemsList: SidebarItemCom[] = [
+export const SidebarItemsList: SidebarItemType[] = [
     {
         path: RoutePath.main,
-        icon: MainIcon20,
+        Icon: MainIcon,
         text: 'Главная',
     },
     {
         path: RoutePath.about,
-        icon: AboutIcon20,
+        Icon: AboutIcon,
         text: 'О сайте',
     },
     {
         path: RoutePath.profile,
-        icon: ProfileIcon20,
+        Icon: ProfileIcon,
         text: 'Профиль',
     },
-]
+];

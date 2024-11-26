@@ -7,7 +7,7 @@ interface ThemeProviderProps {
     initialTheme?: Theme;
 }
 
-export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     const {
         initialTheme,
         children,

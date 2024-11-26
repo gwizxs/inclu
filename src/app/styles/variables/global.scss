@@ -6,22 +6,20 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
     --font-line-xl: 40px;
-    --font-xl: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+    // Размеры
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
-    --modal-z-index: 100;
-    --overlay-color: rgb(0 0 0 / 50%);
-    --red-light: rgb(255 0 0);
-    --red-dark: rgb(255 48 48 / 43.8%);
-}
 
-.content-page {
-    display: flex;
-}
+    // z - Индексы
+    --modal-z-index: 10;
 
-.page-wrapper {
-    flex-grow: 1;
-    padding: 20px;
+    // Цвета
+    --overlay-color: rgba(0 0 0 / 60%);
+    --red-light: #f00;
+    --red-dark: #ce0505;
 }

@@ -1,1 +1,0 @@
-export {AboutPageAsync as About} from './ui/About.async'

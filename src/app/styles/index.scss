@@ -3,18 +3,15 @@
 @import "themes/normal";
 @import "themes/dark";
 
-body {
+.app,
+.app_modal {
     font: var(--font-m);
     color: var(--primary-color);
-    background: var(--bg-color);
-    min-height: 100vh;
 }
 
 .app {
     background: var(--bg-color);
     min-height: 100vh;
-    font: var(--font-m);
-    color: var(--primary-color);
 }
 
 .content-page {

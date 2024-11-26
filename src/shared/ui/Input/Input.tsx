@@ -1,7 +1,4 @@
-/* eslint-disable react/display-name */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { classNames } from 'shared/lib/ClassNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
     InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';

@@ -1,4 +1,4 @@
-import { classNames, Mods } from 'shared/lib/ClassNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
     MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
@@ -23,18 +23,16 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen,
         onClose,
-        lazy
+        lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
-
-
     useEffect(() => {
-        if(isOpen) {
+        if (isOpen) {
             setIsMounted(true);
         }
     }, [isOpen]);
@@ -49,6 +47,7 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
+    // Новые ссылки!!!
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
@@ -71,17 +70,17 @@ export const Modal = (props: ModalProps) => {
     }, [isOpen, onKeyDown]);
 
     const mods: Mods = {
-        [cls.opened]: Boolean(isOpen),
-        [cls.isClosing]: Boolean(isClosing),
+        [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing,
     };
 
-    if(lazy && !isMounted) {
+    if (lazy && !isMounted) {
         return null;
     }
-    
+
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={cls.content}
