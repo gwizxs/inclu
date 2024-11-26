@@ -1,4 +1,4 @@
-import { Story } from '@storybook/react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'entities/Profile';
@@ -12,7 +12,7 @@ const defaultAsyncReducers: ReducersList = {
 export const StoreDecorator = (
     state: DeepPartial<StateSchema>,
     asyncReducers?: ReducersList,
-) => (StoryComponent: Story) => (
+) => (StoryComponent: any) => (
     <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
         <StoryComponent />
     </StoreProvider>
