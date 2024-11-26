@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig, ThunkExtraArg } from "app/providers/StoreProvider";
+import { ThunkExtraArg } from "app/providers/StoreProvider";
 import { User, UserActions } from "entities/User";
 import { USER_LOCALSTORAGE_KEY } from "shared/constants/localStorage";
 
@@ -9,7 +9,7 @@ interface LoginByUsername {
 }
 
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsername, ThunkConfig<string>>(
+export const loginByUsername = createAsyncThunk<User, LoginByUsername, {rejectValue: string, extra: ThunkExtraArg}>(
     'login/loginByUsername',
     async (AuthData, API) => {
         const {extra, dispatch, rejectWithValue } = API;
