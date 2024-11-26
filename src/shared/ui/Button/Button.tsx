@@ -1,6 +1,6 @@
-import { classNames } from "shared/lib/ClassNames/classNames"
+import { classNames, Mods } from "shared/lib/ClassNames/classNames"
 import s from './Button.module.scss'
-import { FC, memo } from "react"
+import { memo } from "react"
 
 export enum ThemeButton {
     CLEAR = 'clear',
@@ -30,12 +30,12 @@ export const Button = memo((props: IButtonProps) => {
         children,
         square,
         size = ButtonSize.M,
-        theme,
+        theme = ThemeButton.OUTLINE,
         disabled,
         ...OtherProps
     } = props
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [s[theme]]: true,
         [s.square]: square,
         [s[size]]: true,
@@ -43,7 +43,7 @@ export const Button = memo((props: IButtonProps) => {
     }
     return (
         <button
-            className={classNames(s.Button, {}, [className, s[theme]])}
+            className={classNames(s.Button, mods, [className])}
             disabled={disabled}
             {...OtherProps}
         >
