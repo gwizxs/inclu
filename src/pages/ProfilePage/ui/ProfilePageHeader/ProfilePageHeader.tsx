@@ -23,7 +23,7 @@ const ProfilePageHeader = ({ className }: ProfilePageProps) => {
     }, [dispatch]);
 
     const onCantleEdit = useCallback(() => {
-        dispatch(profileActions.setReadonly(true));
+        dispatch(profileActions.cancelEdit());
     }, [dispatch]);
 
     return (
