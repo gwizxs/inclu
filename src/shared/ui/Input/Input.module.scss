@@ -19,6 +19,10 @@
     }
 }
 
+.readonly {
+    opacity: 0.5;
+}
+
 .caretWrapper {
     flex-grow: 1;
     position: relative;
