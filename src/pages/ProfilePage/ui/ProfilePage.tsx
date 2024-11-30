@@ -5,6 +5,7 @@ import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
+import { Currency } from 'entities/Currency';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -51,6 +52,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch])
 
+    const onChangeCurrency = useCallback((currency?: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch])
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
@@ -66,6 +71,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onchangeAge={onChangeAge}
                     onChangeAvatar={onChangeAvatar}
                     onChangeUsername={onChangeUsername}
+                    onChangeCurrency={onChangeCurrency}
                 />
             </div>
         </DynamicModuleLoader>
