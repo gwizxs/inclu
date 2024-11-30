@@ -16,6 +16,8 @@ interface ProfileCardProps {
     onchangeLastName?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
     onchangeAge?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -28,7 +30,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onchangeFirstName,
         onchangeLastName,
         onChangeCity,
-        onchangeAge
+        onchangeAge,
+        onChangeAvatar,
+        onChangeUsername
     } = props
     const { t } = useTranslation('profile');
 
@@ -57,6 +61,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <div className={cls.header}>
             </div>
             <div className={cls.data}>
+                {data?.avatar && <img src={data?.avatar} alt="" /> }
                 <Input
                     readonly={readonly}
                     value={data?.first}
@@ -85,6 +90,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     placeholder={t('Ваш возраст')}
                     className={cls.input}
                     onChange={onchangeAge}
+                    readonly={readonly}
+                />
+                <Input
+                    readonly={readonly}
+                    value={data?.username}
+                    placeholder={t('имя пользователя')}
+                    className={cls.input}
+                    onChange={onChangeUsername}
+                    
+                />
+                <Input
+                    value={data?.avatar}
+                    placeholder={t('ваша ссылка на аватар')}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
                     readonly={readonly}
                 />
             </div>
