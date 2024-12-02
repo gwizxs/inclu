@@ -4,6 +4,7 @@ import { Profile } from '../../types/profile';
 
 export const fetchProfileData = createAsyncThunk<
     Profile,
+    // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
     void,
     ThunkConfig<string>
     >(
