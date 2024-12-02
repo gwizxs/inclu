@@ -1,38 +1,48 @@
-name: GitHub Actions Demo
-on: [push]
-push:
-  branches: [ main ]
+name: Inclu
+
+on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
 jobs:
-  pipeline: 
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
-    steps: 
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-    uses: actions/setup-node@v1
-    with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install modules
-      run: npm install
-    - name: Run prod project
-      run: npm run build:prod
-    - name: linting ts
-      if: always()
-      run: npx eslint . --fix
-    - name: linting scss
-      if: always()
-      run: npx stylelint '**/*.scss' --fix
-    - name: run test unit
-      if: always()
-      run: npm run unit
-    - name: build storybook
-      if: always()
-      run: npm run storybook:build
-    - name: screenshot testing
-      run: npm run test:ui:ci
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install modules
+        run: npm install
+
+      - name: Run production build
+        run: npm run build:prod
+
+      - name: Lint TypeScript files
+        if: always()
+        run: npx eslint . --fix
+
+      - name: Lint SCSS files
+        if: always()
+        run: npx stylelint '**/*.scss' --fix
+
+      - name: Run unit tests
+        if: always()
+        run: npm run unit
+
+      - name: Build Storybook
+        if: always()
+        run: npm run storybook:build
+
+      - name: Screenshot testing
+        run: npm run test:ui:ci
+\\
