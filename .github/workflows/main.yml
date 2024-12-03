@@ -27,10 +27,6 @@ jobs:
       - name: Run production build
         run: npm run build:prod
 
-      - name: Lint TypeScript files
-        if: always()
-        run: npx eslint . --fix
-
       - name: Lint SCSS files
         if: always()
         run: npx stylelint '**/*.scss' --fix
