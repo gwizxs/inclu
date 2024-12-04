@@ -12,17 +12,13 @@ export default meta;
 type Story = StoryObj<typeof NotFoundPage>;
 
 export const Light: Story = {
-
+    decorators: [
+        ThemeDecorator(Theme.LIGHT)
+    ]
 };
 
 export const Dark: Story = {
-
+    decorators: [
+        ThemeDecorator(Theme.DARK)
+    ]
 };
-
-Light.decorators = [
-    ThemeDecorator(Theme.LIGHT)
-]
-
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK)
-]
