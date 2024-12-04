@@ -10,3 +10,7 @@ export {
     UserSchema,
     User,
 } from './model/types/user';
+
+export {
+    getUserInited,
+} from './model/selectors/getUserInited/getUserInited';
