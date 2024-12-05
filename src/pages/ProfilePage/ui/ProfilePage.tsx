@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateError, profileActions, ProfileCard, profileReducer } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
@@ -104,4 +104,4 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     );
 };
 
-export default ProfilePage;
+export default memo(ProfilePage);
