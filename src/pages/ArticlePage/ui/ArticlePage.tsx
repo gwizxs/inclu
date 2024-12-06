@@ -1,14 +1,14 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
-const ArticlePage = () => {
-    const { t } = useTranslation();
+interface ArticlesPageProps {
+    className?: string;
+}
+
+const ArticlesPage = () => {
 
     return (
-        <div>
-            {t('Страница статьи')}
-        </div>
+        <div  />
     );
 };
 
-export default memo(ArticlePage);
+export default memo(ArticlesPage);
