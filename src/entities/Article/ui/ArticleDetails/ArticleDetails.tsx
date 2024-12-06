@@ -4,7 +4,7 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
@@ -21,6 +21,7 @@ import {
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { Icon } from 'shared/ui/Icon/Icon';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -109,14 +110,14 @@ export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
-
+                    size = {TextSize.L}
                 />
                 <div className={cls.articleInfo}>
-                    <EyeIcon />
+                    <Icon Svg={EyeIcon}/>
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <CalendarIcon/>
+                    <Icon Svg={CalendarIcon}/>
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
