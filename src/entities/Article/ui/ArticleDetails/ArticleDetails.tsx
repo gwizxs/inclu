@@ -4,17 +4,14 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
 import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 import {
     getArticleDetailsData,
@@ -22,6 +19,8 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -29,10 +28,10 @@ interface ArticleDetailsProps {
 }
 
 const reducers: ReducersList = {
-    articlesDetails: articleDetailsReducer,
+    articleDetails: articleDetailsReducer,
 };
 
-export const ArticleDetails = memo((props: ArticleDetailsProps) => {
+export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
     const { className, id } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -110,14 +109,14 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
-                    size={TextSize.L}
+
                 />
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} />
+                    <EyeIcon />
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={CalendarIcon} />
+                    <CalendarIcon/>
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
