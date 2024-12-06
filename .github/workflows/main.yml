@@ -1,43 +1,32 @@
-# name: Inclu
+name: Inclu
 
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-# jobs:
-#   pipeline:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-#       - name: Install modules
-#         run: npm install
+      - name: Install modules
+        run: npm install
 
-#       - name: Run production build
-#         run: npm run build:prod
+      - name: Lint SCSS files
+        if: always()
+        run: npx stylelint '**/*.scss' --fix
 
-#       - name: Lint SCSS files
-#         if: always()
-#         run: npx stylelint '**/*.scss' --fix
-
-#       - name: Run unit tests
-#         if: always()
-#         run: npm run unit
-
-#       - name: Build Storybook
-#         if: always()
-#         run: npm run storybook:build
-
-#       - name: Screenshot testing
-#         run: npm run test:ui:ci
+      - name: Screenshot testing
+        run: npm run test:ui:ci

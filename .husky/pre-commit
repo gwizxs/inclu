@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# npx stylelint '**/*.scss' --fix
-# npm run storybook:build
-# npm run test:ui
-# npm run unit
+npx stylelint '**/*.scss' --fix
+npm run storybook:build
+npm run test:ui
+npm run unit
 
