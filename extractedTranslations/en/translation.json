@@ -1,6 +1,7 @@
 {
   "": "",
   "(": "(",
+  "Loading": "Loading",
   "decrement": "decrement",
   "increment": "increment",
   "throw error": "throw error",
@@ -19,6 +20,8 @@
   "Главная": "Main",
   "Главная страница": "Main Page",
   "Имя": "Имя",
+  "Комментарии": "Комментарии",
+  "Комментарии отсутствуют": "Комментарии отсутствуют",
   "Логин": "Login",
   "Неправильный логин или пароль": "Incorrect login or password",
   "О сайте": "About",

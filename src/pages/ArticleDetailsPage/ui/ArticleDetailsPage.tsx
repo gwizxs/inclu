@@ -4,6 +4,8 @@ import { memo } from 'react';
 import { ArticlesDetails } from 'entities/Article';  
 import { useParams } from 'react-router-dom';
 import cls from './ArticleDetailsPage.module.scss';
+import { Text } from 'shared/ui/Text/Text';
+import { CommentList } from 'entities/Comment';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -25,6 +27,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
             <ArticlesDetails id={id} />
+            <Text className={cls.commentTitle} title={t('Комментарии')} />
+            <CommentList comments={[]} />
         </div>
     );
 };
