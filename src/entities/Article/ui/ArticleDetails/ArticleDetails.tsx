@@ -22,6 +22,7 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -71,11 +72,9 @@ export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     let content;
 

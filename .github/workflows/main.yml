@@ -29,4 +29,4 @@ jobs:
         run: npx stylelint '**/*.scss' --fix
 
       - name: Screenshot testing
-        run: npm run test:ui:ci
+        run: npm run test:ui
