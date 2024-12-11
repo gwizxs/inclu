@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { CommentCard } from "entities/Comment";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
