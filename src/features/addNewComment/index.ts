@@ -1,0 +1,1 @@
+export type { addNewCommentSchema } from './model/types/addNewComment'
