@@ -4,7 +4,7 @@ import { Comment } from '../../model/types/comment'
 import cls from './CommentCard.module.scss'
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Text } from "shared/ui/Text/Text";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/ClassNames/classNames";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";

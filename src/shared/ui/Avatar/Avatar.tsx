@@ -1,6 +1,6 @@
 import { CSSProperties, memo, useMemo } from "react";
 import s from './Avatar.module.scss'
-import { classNames, Mods } from "shared/lib/classNames/classNames";
+import { classNames, Mods } from "shared/lib/ClassNames/classNames";
 
 interface AppLinkProps {
     className?: string;

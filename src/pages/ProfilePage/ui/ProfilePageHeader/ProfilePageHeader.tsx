@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/ClassNames/classNames";
 import cls from './ProfilePageHeader.module.scss'
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Text } from "shared/ui/Text/Text";
