@@ -7,6 +7,8 @@ import { Text } from "shared/ui/Text/Text";
 import { Icon } from "shared/ui/Icon/Icon";
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import { Card } from "shared/ui/Card/Card";
+import { useHover } from "shared/lib/hooks/useHover/useHover";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 
 
 interface ArticleListItemProps {
@@ -22,21 +24,24 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         view,
     } = props;
     const { t } = useTranslation();
+    const [isHover, bindHover] = useHover();
+    console.log(isHover);
 
     if (view === ArticleView.BIG) {
         return (
             <div className={classNames(s.ArticleListItem, {}, [className, s.big])}>
-                <img src={article.img} alt={article.title} className={s.img} />
-                <div className={s.info}>
-                    <h4>{article.title}</h4>
-                    <p>{article.subtitle}</p>
-                </div>
+                <Card className={s.card}>
+                    <div className={s.header}>
+                        <Avatar size={30} src={article.user.avatar} />
+
+                    </div>
+                </Card>
             </div>
         )
     }
 
     return (
-        <div className={classNames(s.SMALL, {}, [className, view])}>
+        <div {...bindHover} className={classNames(s.SMALL, {}, [className, view])}>
             <Card className={s.card}>
                 <div className={s.imageWrapper}>
                     <img src={article.img} alt={article.title} className={s.img} />

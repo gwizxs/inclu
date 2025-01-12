@@ -3,7 +3,7 @@ export {
     Profile,
     ProfileSchema,
     
-} from './model/types/profile';
+} from './model/types/Profile';
 
 export {
     profileActions,
