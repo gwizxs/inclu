@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Article, ArticleView } from "../../model/types/article";
 import cls from './ArticleList.module.scss'
 import { classNames } from "shared/lib/ClassNames/classNames";
-import {ArticleListItem} from '../ArticleListItem/ArticleListItem'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 
 interface ArticleListProps {
@@ -26,14 +26,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
     } = props;
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem
             article={article}
@@ -48,6 +40,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

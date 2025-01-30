@@ -1,7 +1,7 @@
 import classNames from "shared/lib/ClassNames/classNames"
 import s from './Page.module.scss'
 import { MutableRefObject, ReactNode, useRef } from "react"
-import { UseInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll"
+import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 
 interface PageProps {
     className?: string
@@ -14,7 +14,7 @@ export const Page = (props: PageProps) => {
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
 
-    UseInfiniteScroll({
+    useInfiniteScroll({
         triggerRef,
         wrapperRef,
         callback: onScrollEnd
