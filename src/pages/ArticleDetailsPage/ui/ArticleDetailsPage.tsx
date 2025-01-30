@@ -15,6 +15,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { Page } from 'shared/ui/Page/Page';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -54,7 +55,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
                     {t('Назад')}
                 </Button>
@@ -63,7 +64,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
