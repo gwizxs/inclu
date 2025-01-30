@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/ClassNames/classNames';
 import { memo } from 'react';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import cls from './ArticleListItem.module.scss';
+import s from './ArticleListItem.module.scss';
 import { ArticleView } from '../../model/types/article';
 
 interface ArticleListItemSkeletonProps {
@@ -15,16 +15,16 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
 
     if (view === ArticleView.BIG) {
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-                <Card className={cls.card}>
-                    <div className={cls.header}>
+            <div className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
+                <Card className={s.card}>
+                    <div className={s.header}>
                         <Skeleton border="50%" height={30} width={30} />
-                        <Skeleton width={150} height={16} className={cls.username} />
-                        <Skeleton width={150} height={16} className={cls.date} />
+                        <Skeleton width={150} height={16} className={s.username} />
+                        <Skeleton width={150} height={16} className={s.date} />
                     </div>
-                    <Skeleton width={250} height={24} className={cls.title} />
-                    <Skeleton height={200} className={cls.img} />
-                    <div className={cls.footer}>
+                    <Skeleton width={250} height={24} className={s.title} />
+                    <Skeleton height={200} className={s.img} />
+                    <div className={s.footer}>
                         <Skeleton height={36} width={200} />
                     </div>
                 </Card>
@@ -33,15 +33,15 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
     }
 
     return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-            <Card className={cls.card}>
-                <div className={cls.imageWrapper}>
-                    <Skeleton width={200} height={200} className={cls.img} />
+        <div className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
+            <Card className={s.card}>
+                <div className={s.imageWrapper}>
+                    <Skeleton width={200} height={200} className={s.img} />
                 </div>
-                <div className={cls.infoWrapper}>
+                <div className={s.infoWrapper}>
                     <Skeleton width={130} height={16} />
                 </div>
-                <Skeleton width={150} height={16} className={cls.title} />
+                <Skeleton width={150} height={16} className={s.title} />
             </Card>
         </div>
     );

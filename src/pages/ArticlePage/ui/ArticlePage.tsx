@@ -92,7 +92,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     return (
         <div className={classNames(cls.ArticlesPage, {}, [className])}>
             <ArticleList
-                isLoading
+                isLoading={false}
                 view={ArticleView.SMALL}
                 articles={
                     new Array(20).fill(0).map((item, index) => ({
