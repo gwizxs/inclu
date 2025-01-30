@@ -1,7 +1,6 @@
 .CommentCard {
     padding: 10px;
-    border-radius: 10px;
-    border: 1px solid rgb(0 0 0 / 10%);
+    border: 1px solid var(--primary-color);
 }
 
 .header {
@@ -15,4 +14,8 @@
 
 .username {
     margin-left: 10px;
+}
+
+.loading {
+    border: none;
 }

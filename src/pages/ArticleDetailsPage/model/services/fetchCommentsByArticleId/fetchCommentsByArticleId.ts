@@ -4,14 +4,14 @@ import { Comment } from 'entities/Comment';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
     Comment[],
-    string,
+    string | undefined,
     ThunkConfig<string>
     >(
         'articleDetails/fetchCommentsByArticleId',
         async (articleId, thunkApi) => {
             const { extra, rejectWithValue } = thunkApi;
 
-            if(!articleId) {
+            if (!articleId) {
                 return rejectWithValue('error');
             }
 
@@ -20,7 +20,7 @@ export const fetchCommentsByArticleId = createAsyncThunk<
                     params: {
                         articleId,
                         _expand: 'user',
-                    }
+                    },
                 });
 
                 if (!response.data) {

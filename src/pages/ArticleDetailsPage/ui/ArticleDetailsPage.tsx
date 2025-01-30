@@ -7,14 +7,14 @@ import cls from './ArticleDetailsPage.module.scss';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articleDetailsCommentsReducer, getArticleComments } from 'pages/ArticlePage/model/slice/ArticleDetailsCommentsSlice';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsIsLoading } from 'pages/ArticlePage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
+import { getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 interface ArticleDetailsPageProps {
     className?: string;

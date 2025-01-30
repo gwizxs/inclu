@@ -9,8 +9,8 @@ import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticlePage';
 import { addNewCommentSchema } from 'features/addNewComment';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 
 export interface StateSchema {
     counter: CounterSchema;
