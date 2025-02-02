@@ -9,7 +9,7 @@ import cls from './ArticlesPage.module.scss';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/articlesPageSlice';
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initedArticlePage } from '../model/services/initedArticlePage/initedArticlePage';
 

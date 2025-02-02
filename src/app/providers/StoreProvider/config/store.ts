@@ -5,6 +5,7 @@ import { $api } from 'shared/api/api';
 import { CombinedState, Reducer } from 'redux';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
+import { ScrollRecoveryReducer } from 'features/ScrollRecovery';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -14,6 +15,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        ScrollRecovery: ScrollRecoveryReducer
     };
 
     const reducerManager = createReducerManager(rootReducers);
