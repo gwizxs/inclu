@@ -6,12 +6,12 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ArticlesPage.module.scss';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+import { getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/articlesPageSlice';
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initedArticlesPage } from '../model/services/initedArticlePage/initedArticlePage';
 
 
 interface ArticlesPageProps {
@@ -28,7 +28,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
     const view = useSelector(getArticlesPageView);
-    const error = useSelector(getArticlesPageError);
+    // const error = useSelector(getArticlesPageError);
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
@@ -39,10 +39,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initedArticlesPage());
     });
 
     return (
