@@ -11,7 +11,7 @@ import { articlesPageActions, articlesPageReducer, getArticles } from '../model/
 import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
-import { initedArticlesPage } from '../model/services/initedArticlePage/initedArticlePage';
+import { initedArticlePage } from '../model/services/initedArticlePage/initedArticlePage';
 
 
 interface ArticlesPageProps {
@@ -39,7 +39,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initedArticlesPage());
+        dispatch(initedArticlePage());
     });
 
     return (

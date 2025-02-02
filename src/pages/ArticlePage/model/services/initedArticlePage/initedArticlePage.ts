@@ -4,7 +4,7 @@ import {  getArticlesPageInited } from '../../selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../slices/articlesPageSlice';
 
-export const initedArticlesPage = createAsyncThunk<
+export const initedArticlePage = createAsyncThunk<
     void,
     void,
     ThunkConfig<string>
