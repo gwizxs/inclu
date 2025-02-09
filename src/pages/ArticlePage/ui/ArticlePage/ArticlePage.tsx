@@ -1,18 +1,18 @@
 import { classNames } from 'shared/lib/ClassNames/classNames';
 import { memo, useCallback } from 'react';
-import { ArticleList, ArticleView } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ArticlesPage.module.scss';
-import { getArticlesPageIsLoading, getArticlesPageView } from '../model/selectors/articlesPageSelectors';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slices/articlesPageSlice';
-import { ArticleViewSelector } from 'entities/Article/ui/ArticleViewSelector/ArticleViewSelector';
+import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import { Page } from 'widgets/Page/Page';
-import { fetchNextArticlesPage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
-import { initedArticlePage } from '../model/services/initedArticlePage/initedArticlePage';
-
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initedArticlePage } from '../../model/services/initedArticlePage/initedArticlePage';
+import { ArticlePageFilter } from '../ArticlePageFilter/ArticlePageFilter';
+import s from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
     className?: string;
@@ -30,10 +30,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const view = useSelector(getArticlesPageView);
     // const error = useSelector(getArticlesPageError);
 
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
-
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
@@ -48,8 +44,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlePageFilter />
                 <ArticleList
+                    className={s.list}
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
