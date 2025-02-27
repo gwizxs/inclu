@@ -13,6 +13,7 @@ import { Input } from "shared/ui/Input/Input";
 import { ArticleSortSelector } from "features/ArticleSortSelector";
 import { SortOrder } from "shared/types/sort";
 import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
+import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 
 export interface ArticlePageFilterProps {
     className?: string
@@ -32,7 +33,13 @@ export const ArticlePageFilter = (props: ArticlePageFilterProps) => {
 
     const fetchData = useCallback(() => {
         dispatch(fetchArticlesList({}))
-    }, [])
+    }, [dispatch])
+
+
+    const debounceFetchData = useCallback(
+        useDebounce(fetchData, 500),
+        [fetchData],
+    );
 
 
     const onChangeView = useCallback((view: ArticleView) => {
@@ -42,20 +49,20 @@ export const ArticlePageFilter = (props: ArticlePageFilterProps) => {
     const onChangeSort = useCallback((newSort: ArticleSortField) => {
         dispatch(articlesPageActions.setSort(newSort));
         dispatch(articlesPageActions.setPage(1));
-        fetchData()
-    }, [dispatch, fetchData]);
+        debounceFetchData()
+    }, [dispatch, debounceFetchData]);
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));
         dispatch(articlesPageActions.setPage(1));
-        fetchData()
-    }, [dispatch, fetchData]);
+        debounceFetchData()
+    }, [dispatch, debounceFetchData]);
 
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlesPageActions.setSearch(search));
         dispatch(articlesPageActions.setPage(1));
-        fetchData()
-    }, [dispatch, fetchData]);
+        debounceFetchData()
+    }, [dispatch, debounceFetchData]);
 
 
     return (
