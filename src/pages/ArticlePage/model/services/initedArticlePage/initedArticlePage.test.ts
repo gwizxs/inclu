@@ -6,6 +6,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('initedArticlePage.test', () => {
     test('success', async () => {
+        const searchParams = new URLSearchParams();
         const thunk = new TestAsyncThunk(initedArticlePage, {
             articlesPage: {
                 page: 2,
@@ -18,13 +19,14 @@ describe('initedArticlePage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
 
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
     });
 
     test('already inited', async () => {
+        const searchParams = new URLSearchParams();
         const thunk = new TestAsyncThunk(initedArticlePage, {
             articlesPage: {
                 page: 2,
@@ -37,7 +39,7 @@ describe('initedArticlePage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
 
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
