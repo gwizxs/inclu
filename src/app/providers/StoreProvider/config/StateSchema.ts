@@ -6,13 +6,12 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
-import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { addNewCommentSchema } from 'features/addNewComment';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 import { ArticlesPageSchema } from 'pages/ArticlePage';
 import { ScrollRecoverySchema } from 'features/ScrollRecovery';
+import { AxiosInstance } from 'axios';
 
 export interface StateSchema {
     counter: CounterSchema;
