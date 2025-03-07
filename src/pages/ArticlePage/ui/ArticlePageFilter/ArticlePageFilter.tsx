@@ -16,6 +16,7 @@ import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticle
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import Tabs, { TabsItem } from "shared/ui/Tabs/Tabs";
 import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleTypeTabs } from "features/ArticleTypeTabs";
 
 export interface ArticlePageFilterProps {
     className?: string
@@ -67,30 +68,11 @@ export const ArticlePageFilter = (props: ArticlePageFilterProps) => {
         debounceFetchData()
     }, [dispatch, debounceFetchData]);
 
-    const onChangeType = useCallback((tab: TabsItem) => {
-        dispatch(articlesPageActions.setType(tab.value as ArticleType));
+    const onChangeType = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
         debounceFetchData()
     }, [dispatch, debounceFetchData]);
-
-    const typeTabs = useMemo<TabsItem[]>(() => [
-        {
-            value: ArticleType.ALL,
-            content: t('Все'),
-        },
-        {
-            value: ArticleType.IT,
-            content: t('IT'),
-        },
-        {
-            value: ArticleType.SCIENCE,
-            content: t('Наука'),
-        },
-        {
-            value: ArticleType.ECONOMICS,
-            content: t('Экономика'),
-        },
-    ], [t])
 
 
     return (
@@ -114,11 +96,10 @@ export const ArticlePageFilter = (props: ArticlePageFilterProps) => {
                     placeholder={t('Поиск')}
                 />
             </Card>
-            <Tabs
+            <ArticleTypeTabs
                 className={s.tabs}
-                tabs={typeTabs}
                 value={type}
-                onTabClick={onChangeType}
+                onChangeType={onChangeType}
             />
         </div>
     );
