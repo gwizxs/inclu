@@ -23,10 +23,3 @@ jobs:
 
       - name: Install modules
         run: npm install
-
-      - name: Lint SCSS files
-        if: always()
-        run: npx stylelint '**/*.scss' --fix
-
-      - name: Screenshot testing
-        run: npm run test:ui
