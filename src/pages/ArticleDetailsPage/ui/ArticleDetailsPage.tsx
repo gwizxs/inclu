@@ -40,6 +40,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const recommendationsIsLoading = useSelector(getArticleCommentsIsLoading)
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    
 
     const onBackToList = useCallback(() => {
         navigate(RoutePath.articles)
@@ -76,7 +77,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <ArticleList
                     articles={recommendations}
                     isLoading={recommendationsIsLoading}
-                    className={cls.recommendations} />
+                    className={cls.recommendations}
+                    target="_blank" />
                 <Text
                     size={TextSize.L}
                     className={cls.commentTitle}
