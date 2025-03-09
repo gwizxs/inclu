@@ -1,19 +1,15 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-import { Comment } from 'entities/Comment';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { IArticleDetailsPageRecommendationSchema } from '../types/articleDetailsPageRecommendationSchema';
-import { Article, ArticleType } from 'entities/Article';
+import { Article } from 'entities/Article';
+import { fetchArticlesRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsRecommendation || recommendationsAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
 );
 
 const articleDetailsCommentsSlice = createSlice({
@@ -25,24 +21,24 @@ const articleDetailsCommentsSlice = createSlice({
         entities: {},
     }),
     reducers: {},
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(fetchCommentsByArticleId.pending, (state) => {
-    //             state.error = undefined;
-    //             state.isLoading = true;
-    //         })
-    //         .addCase(fetchCommentsByArticleId.fulfilled, (
-    //             state,
-    //             action: PayloadAction<Comment[]>,
-    //         ) => {
-    //             state.isLoading = false;
-    //             commentsAdapter.setAll(state, action.payload);
-    //         })
-    //         .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.payload;
-    //         });
-    // },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchArticlesRecommendations.pending, (state) => {
+                state.error = undefined;
+                state.isLoading = true;
+            })
+            .addCase(fetchArticlesRecommendations.fulfilled, (
+                state,
+                action,
+            ) => {
+                state.isLoading = false;
+                recommendationsAdapter.setAll(state, action.payload);
+            })
+            .addCase(fetchArticlesRecommendations.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            });
+    },
 });
 
 export const {

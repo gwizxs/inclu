@@ -12,21 +12,22 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { articleDetailsCommentsReducer, getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
+import { getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { Page } from 'widgets/Page/Page';
 import { getArticleRecommendations } from '../model/slices/articleDetailsPageRecommendationSlice';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchArticlesRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../model/slices';
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendation: articleDetailsCommentsReducer
+    articleDetailsPage: articleDetailsPageReducer
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -45,10 +46,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     }, [navigate])
 
     useInitialEffect(() => {
-        if (id === undefined) {
-            return '';
-        }
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticlesRecommendations());
     });
 
     const onSendComment = useCallback((text: string) => {
@@ -76,7 +75,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     title={t('Рекомендуем')} />
                 <ArticleList
                     articles={recommendations}
-                    isLoading={recommendationsIsLoading} />
+                    isLoading={recommendationsIsLoading}
+                    className={cls.recommendations} />
                 <Text
                     size={TextSize.L}
                     className={cls.commentTitle}
