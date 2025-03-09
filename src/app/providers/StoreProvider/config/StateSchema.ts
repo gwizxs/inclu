@@ -7,11 +7,12 @@ import {
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { addNewCommentSchema } from 'features/addNewComment';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema';
 import { ArticlesPageSchema } from 'pages/ArticlePage';
 import { ScrollRecoverySchema } from 'features/ScrollRecovery';
 import { AxiosInstance } from 'axios';
+import { IArticleDetailsPageRecommendationSchema } from 'pages/ArticleDetailsPage';
+import { AddCommentFormSchema } from 'features/addCommentForm';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -23,7 +24,8 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
-    addCommentForm?: addNewCommentSchema;
+    articleDetailsRecommendation?: IArticleDetailsPageRecommendationSchema;
+    addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
 }
 

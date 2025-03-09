@@ -27,7 +27,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         navigate(RoutePath.article_details + article.id);
     }, [article.id, navigate]);
 
-    const types = <Text text={article.type.join(', ')} className={cls.types} />;
+    const types = article.type ? <Text text={article.type.join(', ')} className={cls.types} /> : null;
     const views = (
         <>
             <Text text={String(article.views)} className={cls.views} />
