@@ -97,6 +97,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "@types/react-virtualized": "^9.22.2",
     "axios": "^1.7.7",
     "concurrently": "^9.1.0",
     "i18next": "^21.6.11",
@@ -107,7 +108,12 @@
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.21.1",
+    "react-virtualized": "^9.22.6",
     "webpack-bundle-analyzer": "^4.5.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "eslintConfig": {
     "extends": [
