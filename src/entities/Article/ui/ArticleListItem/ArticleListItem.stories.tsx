@@ -3,10 +3,11 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
 import { ArticleListItem } from './ArticleListItem';
+
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/ArticleListItem',
     component: ArticleListItem,
-}
+};
 
 const article = {
     id: '1',
@@ -94,53 +95,53 @@ type Story = StoryObj<typeof ArticleListItem>;
 export const BIG: Story = {
     args: {
         view: ArticleView.BIG,
-        article
-    }
+        article,
+    },
 };
 
 export const SMALL: Story = {
     args: {
         view: ArticleView.SMALL,
-        article
-    }
+        article,
+    },
 };
 
 export const BIG_DARK: Story = {
     args: {
         view: ArticleView.BIG,
-        article
+        article,
     },
     decorators: [
-        ThemeDecorator(Theme.DARK)
-    ]
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const SMALL_DARK: Story = {
     args: {
         view: ArticleView.SMALL,
-        article
+        article,
     },
     decorators: [
-        ThemeDecorator(Theme.DARK)
-    ]
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const BIG_ORANGE: Story = {
     args: {
         view: ArticleView.BIG,
-        article
+        article,
     },
     decorators: [
-        ThemeDecorator(Theme.ORANGE)
-    ]
+        ThemeDecorator(Theme.ORANGE),
+    ],
 };
 
 export const SMALL_ORANGE: Story = {
     args: {
         view: ArticleView.SMALL,
-        article
+        article,
     },
     decorators: [
-        ThemeDecorator(Theme.ORANGE)
-    ]
+        ThemeDecorator(Theme.ORANGE),
+    ],
 };

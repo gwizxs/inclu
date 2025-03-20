@@ -12,6 +12,6 @@ type Story = StoryObj<typeof Card>;
 
 export const Normal: Story = {
     args: {
-        children: <Text title='Title' text="Text fkjgoijejigoerg regoreniorjgjireigjerg ergoijreiojgre" />,
-    }
-}
+        children: <Text title="Title" text="Text fkjgoijejigoerg regoreniorjgjireigjerg ergoijreiojgre" />,
+    },
+};

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticlesDetails } from './ArticleDetails';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ArticlesDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticlesDetails> = {
     title: 'entities/ArticlesDetails',
@@ -20,8 +20,8 @@ const article: Article = {
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
     user: {
-        "id": "1",
-        username: "admin",
+        id: '1',
+        username: 'admin',
     },
     blocks: [
         {
@@ -51,7 +51,6 @@ const article: Article = {
     ],
 };
 
-
 export const Normal: Story = {
     args: {},
     decorators: [
@@ -59,9 +58,9 @@ export const Normal: Story = {
             articleDetails: {
                 data: article,
             },
-        })
-    ]
-}
+        }),
+    ],
+};
 
 export const isLoading: Story = {
     args: {},
@@ -70,10 +69,9 @@ export const isLoading: Story = {
             articleDetails: {
                 isLoading: true,
             },
-        })
-    ]
-}
-
+        }),
+    ],
+};
 
 export const Error: Story = {
     args: {},
@@ -82,6 +80,6 @@ export const Error: Story = {
             articleDetails: {
                 error: 'error',
             },
-        })
-    ]
-}
+        }),
+    ],
+};

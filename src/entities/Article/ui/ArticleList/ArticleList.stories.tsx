@@ -7,7 +7,7 @@ import { ArticleList } from './ArticleList';
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/ArticleList',
     component: ArticleList,
-}
+};
 
 const article = {
     id: '1',
@@ -92,24 +92,22 @@ const article = {
 export default meta;
 type Story = StoryObj<typeof ArticleList>;
 
-
 export const LoadingBig: Story = {
     args: {
         articles: [],
         isLoading: true,
-        view: ArticleView.BIG
-    }
+        view: ArticleView.BIG,
+    },
 };
 
 export const LoadingSmall = {
     args: {
         articles: [],
         isLoading: true,
-        view: ArticleView.SMALL
-    }
+        view: ArticleView.SMALL,
+    },
 
 };
-
 
 export const ListSmall = {
     args: {
@@ -120,8 +118,8 @@ export const ListSmall = {
                 id: String(index),
             })),
         isLoading: false,
-        view: ArticleView.SMALL
-    }
+        view: ArticleView.SMALL,
+    },
 };
 
 export const ListBig = {
@@ -133,8 +131,7 @@ export const ListBig = {
                 id: String(index),
             })),
         isLoading: false,
-        view: ArticleView.BIG
-    }
+        view: ArticleView.BIG,
+    },
 
 };
-

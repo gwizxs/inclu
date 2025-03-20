@@ -6,7 +6,7 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
-import { AutoSizer, List, ListRowProps, WindowScroller } from "react-virtualized";
+import { List, ListRowProps, WindowScroller } from "react-virtualized";
 import { PAGE_ID } from "widgets/Page/Page";
 
 interface ArticleListProps {

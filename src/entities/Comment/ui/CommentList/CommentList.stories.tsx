@@ -1,14 +1,13 @@
 import type { Meta, StoryObj, ArgTypes } from '@storybook/react';
 import { CommentList } from './CommentList';
 
-
 const meta: Meta<typeof CommentList> = {
     title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: {
         className: { control: 'text' },
     },
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof CommentList>;
@@ -27,13 +26,12 @@ export const Primary: Story = {
                 user: { id: '1', username: 'Petya' },
             },
         ],
-    }
+    },
 };
 
 export const Loading: Story = {
     args: {
         comments: [],
         isLoading: true,
-    }
+    },
 };
-

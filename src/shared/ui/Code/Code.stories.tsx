@@ -22,5 +22,5 @@ export const Primary: Story = {
         + 'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n'
         + '\n'
         + 'export const Normal = Template.bind({});',
-    }
+    },
 };

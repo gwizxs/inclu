@@ -15,7 +15,7 @@ describe('initedArticlePage.test', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
-                _inited: false
+                _inited: false,
             },
         });
 
@@ -35,7 +35,7 @@ describe('initedArticlePage.test', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
-                _inited: true
+                _inited: true,
             },
         });
 
@@ -45,4 +45,3 @@ describe('initedArticlePage.test', () => {
         expect(fetchArticlesList).not.toHaveBeenCalled();
     });
 });
-

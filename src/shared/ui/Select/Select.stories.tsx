@@ -18,7 +18,5 @@ export const Primary: Story = {
             { value: '1235', content: 'Третий пункт' },
             { value: '12', content: 'Четвертый пункт' },
         ],
-    }
-}
-
-
+    },
+};

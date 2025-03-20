@@ -1,17 +1,16 @@
-
 import type { Meta, StoryObj } from '@storybook/react';
-import ProfilePage from './ProfilePage';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import avatar from '../../../shared/assets/tests/avatar.jpg'
+import ProfilePage from './ProfilePage';
+import avatar from '../../../shared/assets/tests/avatar.jpg';
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
-}
+};
 
 export default meta;
 
@@ -23,18 +22,18 @@ export const Light: Story = {
         StoreDecorator({
             profile: {
                 form: {
-                    avatar: avatar,
+                    avatar,
                     username: 'admin',
                     first: 'admin',
                     lastname: 'admin',
                     age: 22,
                     city: 'Moscow',
                     currency: Currency.RUB,
-                    country: Country.Russia
-                }
-            }
-        })
-    ]
+                    country: Country.Russia,
+                },
+            },
+        }),
+    ],
 };
 
 export const Dark: Story = {
@@ -43,16 +42,16 @@ export const Dark: Story = {
         StoreDecorator({
             profile: {
                 form: {
-                    avatar: avatar,
+                    avatar,
                     username: 'admin',
                     first: 'admin',
                     lastname: 'admin',
                     age: 22,
                     city: 'Moscow',
                     currency: Currency.RUB,
-                    country: Country.Russia
-                }
-            }
-        })
-    ]
+                    country: Country.Russia,
+                },
+            },
+        }),
+    ],
 };

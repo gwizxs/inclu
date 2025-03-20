@@ -41,7 +41,6 @@ describe('fetchNextArticlesPage.test', () => {
     });
 });
 
-
 test('isLoading true', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
         articlesPage: {
@@ -59,4 +58,3 @@ test('isLoading true', async () => {
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();
 });
-
