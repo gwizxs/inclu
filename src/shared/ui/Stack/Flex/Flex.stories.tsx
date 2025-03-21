@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { Flex } from './Flex';
 
 const meta: Meta<typeof Flex> = {
@@ -20,10 +19,9 @@ export const Row: Story = {
                 <div>test</div>
                 <div>test</div>
             </>
-        )
+        ),
     },
 };
-
 
 export const Column: Story = {
     args: {
@@ -36,6 +34,6 @@ export const Column: Story = {
                 <div>test</div>
                 <div>test</div>
             </div>
-        )
+        ),
     },
 };

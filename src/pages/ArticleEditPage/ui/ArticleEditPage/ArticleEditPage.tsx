@@ -4,7 +4,7 @@ import { Page } from 'widgets/Page/Page';
 
 const ArticleEditPage = () => {
     const { t } = useTranslation();
-    const { id } = useParams<{ id: string }>()
+    const { id } = useParams<{ id: string }>();
     const isEdit = Boolean(id);
 
     return (
