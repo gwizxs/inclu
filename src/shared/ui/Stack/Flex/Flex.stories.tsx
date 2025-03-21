@@ -37,3 +37,33 @@ export const Column: Story = {
         ),
     },
 };
+
+export const Gap8: Story = {
+    args: {
+        gap: '8px',
+        children: (
+            <div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+            </div>
+        ),
+    },
+};
+
+export const AlignEnd: Story = {
+    args: {
+        align: 'end',
+        children: (
+            <div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+                <div>test</div>
+            </div>
+        ),
+    },
+};

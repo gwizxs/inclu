@@ -14,6 +14,10 @@
     &__end {
         justify-content: flex-end;
     }
+
+    &__between {
+        justify-content: space-between;
+    }
 }
 
 .align {
@@ -38,4 +42,28 @@
     &__column {
         flex-direction: column;
     }
+}
+
+.gap {
+    &_4 {
+        gap: 4px;
+    }
+
+    &_8 {
+        gap: 8px;
+    }
+
+    &_16 {
+        gap: 16px;
+    }
+    &_24 {
+        gap: 24px;
+    }
+    &_32 {
+        gap: 32px;
+    }
+}
+
+.max {
+    width: 100%;
 }

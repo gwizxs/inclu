@@ -1,7 +1,6 @@
-import classNames from "shared/lib/ClassNames/classNames"
-import s from './Flex.module.scss'
-import { ReactNode } from "react"
-
+import classNames, { Mods } from 'shared/lib/ClassNames/classNames';
+import { ReactNode } from 'react';
+import s from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between' | 'around'
 export type FlexAlign = 'start' | 'center' | 'end'
@@ -13,34 +12,35 @@ const justifyClasses: Record<FlexJustify, string> = {
     center: s.justify__center,
     end: s.justify__end,
     between: s.justify__between,
-    around: s.justify__around
-}
+    around: s.justify__around,
+};
 
 const alignClasses: Record<FlexAlign, string> = {
     start: s.align__start,
     center: s.align__center,
-    end: s.align__end
-}
+    end: s.align__end,
+};
 
 const directionClasses: Record<FlexDirection, string> = {
     row: s.direction__row,
-    column: s.direction__column
-}
+    column: s.direction__column,
+};
 
 const gapClasses: { [key in FlexGap as string]: string } = {
     4: s.gap_4,
     8: s.gap_8,
     16: s.gap_16,
     24: s.gap_24,
-    32: s.gap_32
-}
-interface FlexProps {
+    32: s.gap_32,
+};
+export interface FlexProps {
     justify?: FlexJustify
     align?: FlexAlign
     direction: FlexDirection
     className?: string
     children: ReactNode
     gap?: string
+    max?: boolean
 }
 
 export const Flex = (props: FlexProps) => {
@@ -50,7 +50,8 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         className,
         children,
-        gap
+        gap,
+        max,
     } = props;
 
     const classes = [
@@ -58,13 +59,17 @@ export const Flex = (props: FlexProps) => {
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
-        gap && gapClasses[gap]
-    ]
+        gap && gapClasses[gap],
+    ];
+
+    const mods: Mods = {
+        [s.max]: max,
+    };
     return (
         <div
-            className={classNames(s.Flex, {}, classes)}
+            className={classNames(s.Flex, mods, classes)}
         >
-            {children}  
+            {children}
         </div>
     );
 };

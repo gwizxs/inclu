@@ -11,6 +11,10 @@ import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import cls from './ArticleDetails.module.scss';
 import {
@@ -19,10 +23,6 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -109,14 +109,14 @@ export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
-                    size = {TextSize.L}
+                    size={TextSize.L}
                 />
                 <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon}/>
+                    <Icon Svg={EyeIcon} />
                     <Text text={String(article?.views)} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <Icon Svg={CalendarIcon}/>
+                    <Icon Svg={CalendarIcon} />
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
