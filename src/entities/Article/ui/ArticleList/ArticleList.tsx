@@ -1,13 +1,13 @@
-import { HTMLAttributeAnchorTarget, memo } from "react";
-import { Article, ArticleView } from "../../model/types/article";
-import cls from './ArticleList.module.scss'
-import { classNames } from "shared/lib/ClassNames/classNames";
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { useTranslation } from "react-i18next";
-import { List, ListRowProps, WindowScroller } from "react-virtualized";
-import { PAGE_ID } from "widgets/Page/Page";
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { classNames } from 'shared/lib/ClassNames/classNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
+import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { PAGE_ID } from 'widgets/Page/Page';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import cls from './ArticleList.module.scss';
+import { Article, ArticleView } from '../../model/types/article';
 
 interface ArticleListProps {
     className?: string;
@@ -29,22 +29,24 @@ export const ArticleList = memo((props: ArticleListProps) => {
         articles,
         view = ArticleView.SMALL,
         isLoading,
-        target
+        target,
     } = props;
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
-    const isBig = view === ArticleView.BIG
+    const isBig = view === ArticleView.BIG;
 
     const itemsPerRow = isBig ? 1 : 3;
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
-    const rowRenderer = ({ index, key, style, isScrolling }: ListRowProps) => {
+    const rowRenderer = ({
+        index, key, style, isScrolling,
+    }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;
-        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length)
+        const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
 
-
+        // eslint-disable-next-line no-plusplus
         for (let i = fromIndex; i < toIndex; i++) {
             items.push(
                 <ArticleListItem
@@ -52,23 +54,23 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     view={view}
                     className={cls.card}
                     target={target}
-                    key={'string' + i}
-                />
-            )
+                    key={`string${i}`}
+                />,
+            );
         }
         return (
             <div key={key} style={style} className={cls.row}>
                 {items}
             </div>
-        )
-    }
+        );
+    };
 
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                <Text size={TextSize.L} title={t("Ничего не найдено")} />
+                <Text size={TextSize.L} title={t('Ничего не найдено')} />
             </div>
-        )
+        );
     }
 
     return (
@@ -81,7 +83,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 registerChild,
                 onChildScroll,
                 isScrolling,
-                scrollTop
+                scrollTop,
             }) => (
                 <div
                     ref={registerChild}
