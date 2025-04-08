@@ -1,12 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile, ValidateProfileError } from '../../types/Profile';
+
+import { Profile } from 'entities/Profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 
 export const updateProfileData = createAsyncThunk<
     Profile,
-    // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
     void,
     ThunkConfig<ValidateProfileError[]>
     >(
@@ -23,7 +24,10 @@ export const updateProfileData = createAsyncThunk<
             }
 
             try {
-                const response = await extra.api.put<Profile>('/profile', formData);
+                const response = await extra.api.put<Profile>(
+                    `/profile/${formData}`,
+                    formData,
+                );
 
                 if (!response.data) {
                     throw new Error();

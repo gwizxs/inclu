@@ -1,33 +1,35 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile, ProfileSchema } from '../types/profile';
+import { Profile } from 'entities/Profile';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 
 const initialState: ProfileSchema = {
     readonly: true,
     isLoading: false,
     error: undefined,
     data: undefined,
+    id: '',
 };
 
 export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
-        setReadonly: (state, action : PayloadAction<boolean>) => {
-            state.readonly = action.payload
+        setReadonly: (state, action: PayloadAction<boolean>) => {
+            state.readonly = action.payload;
         },
         cancelEdit: (state) => {
             state.readonly = true;
-            state.validateErrors = undefined
+            state.validateErrors = undefined;
             state.form = state.data;
         },
         updateProfile: (state, action: PayloadAction<Profile>) => {
             state.form = {
-                ...state.data,
+                ...state.form,
                 ...action.payload,
-            }
-        }
+            };
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -41,7 +43,7 @@ export const profileSlice = createSlice({
             ) => {
                 state.isLoading = false;
                 state.data = action.payload;
-                state.data = action.payload;
+                state.form = action.payload;
             })
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
@@ -57,19 +59,16 @@ export const profileSlice = createSlice({
             ) => {
                 state.isLoading = false;
                 state.data = action.payload;
-                state.data = action.payload;
+                state.form = action.payload;
                 state.readonly = true;
-                state.validateErrors = undefined
+                state.validateErrors = undefined;
             })
             .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
                 state.validateErrors = action.payload;
             });
     },
-})
-
-
-
+});
 
 // Action creators are generated for each case reducer function
 export const { actions: profileActions } = profileSlice;

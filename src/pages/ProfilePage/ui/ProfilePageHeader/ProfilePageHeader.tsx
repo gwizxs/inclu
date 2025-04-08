@@ -3,10 +3,11 @@ import { classNames } from 'shared/lib/ClassNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import { getProfileReadonly, updateProfileData } from 'features/editableProfileCard';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { profileActions } from 'features/editableProfileCard/model/slice/profileSlice';
 
 interface ProfilePageProps {
     className?: string;
