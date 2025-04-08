@@ -79,6 +79,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-html-reporters": "^3.0.10",
     "json-server": "^0.17.0",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
