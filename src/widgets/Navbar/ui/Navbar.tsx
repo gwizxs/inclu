@@ -1,6 +1,5 @@
-
 import { useTranslation } from 'react-i18next';
-import React, { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,9 +9,9 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import cls from './Navbar.module.scss';
 import { Dropdown } from 'shared/ui/Dropdown/DropDown';
 import classNames from 'shared/lib/ClassNames/classNames';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -41,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text
                     className={cls.appName}
-                    title={t('Ulbi TV App')}
+                    title={t('Inclu')}
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
