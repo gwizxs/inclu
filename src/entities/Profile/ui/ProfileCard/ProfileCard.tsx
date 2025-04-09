@@ -82,6 +82,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 placeholder={t('Ваше имя')}
                 className={cls.input}
                 onChange={onchangeFirstName}
+                data-testid="ProfileCard.FirstName"
 
             />
             <Input
@@ -90,6 +91,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onchangeLastName}
                 readonly={readonly}
+                data-testid="ProfileCard.LastName"
             />
             <Input
                 readonly={readonly}
@@ -97,7 +99,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 placeholder={t('Ваше город')}
                 className={cls.input}
                 onChange={onChangeCity}
-
+                data-testid="ProfileCard.City"
             />
             <Input
                 value={data?.age}
@@ -105,6 +107,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onchangeAge}
                 readonly={readonly}
+                data-testid="ProfileCard.Age"
             />
             <Input
                 readonly={readonly}
@@ -112,7 +115,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 placeholder={t('имя пользователя')}
                 className={cls.input}
                 onChange={onChangeUsername}
-
+                data-testid="ProfileCard.Username"
             />
             <Input
                 value={data?.avatar}
@@ -120,18 +123,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeAvatar}
                 readonly={readonly}
+                data-testid="ProfileCard.Avatar"
             />
             <CurrencySelect
                 value={data?.currency}
                 readonly={readonly}
                 className={cls.input}
                 onChange={onChangeCurrency}
+                data-testid="ProfileCard.Currency"
             />
             <CountrySelect
                 value={data?.country}
                 readonly={readonly}
                 className={cls.input}
                 onChange={onChangeCountry}
+                data-testid="ProfileCard.Country"
             />
         </VStack>
     );
