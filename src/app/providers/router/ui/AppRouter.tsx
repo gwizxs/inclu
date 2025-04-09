@@ -10,15 +10,15 @@ const AppRouter = () => {
             <Suspense fallback={<PageLoader />}>
                 {route.element}
             </Suspense>
-        )
+        );
         return (
             <Route
                 key={route.path}
                 path={route.path}
                 element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
             />
-        )
-    }, [])
+        );
+    }, []);
 
     return (
         <Routes>
