@@ -1,9 +1,9 @@
-import { Configuration, DefinePlugin, RuleSetRule } from "webpack";
-import { BuildPaths } from "../build/types/config";
-import path from "path";
-import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
+import path from 'path';
+import { BuildPaths } from '../build/types/config';
+import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
 
-export default ({config}: {config: Configuration}) => {
+export default ({ config }: {config: Configuration}) => {
     const paths: BuildPaths = {
         build: '',
         html: '',
@@ -11,11 +11,10 @@ export default ({config}: {config: Configuration}) => {
         src: path.resolve(__dirname, '..', '..', 'src'),
         locales: '',
         buildLocales: '',
-    }
+    };
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
     config.module?.rules?.push(buildCssLoaders(true));
-
 
     if (config.module?.rules) {
         config.module.rules = config.module.rules
@@ -35,9 +34,9 @@ export default ({config}: {config: Configuration}) => {
 
     config.plugins?.push(new DefinePlugin({
         __IS_DEV__: true,
-        __API__: JSON.stringify(''),
-        __PROJECT__: JSON.stringify('storybook')
+        __API__: JSON.stringify('http://dalbaeb.com'),
+        __PROJECT__: JSON.stringify('storybook'),
     }));
 
     return config;
-}
+};
