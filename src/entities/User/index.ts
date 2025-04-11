@@ -14,11 +14,14 @@ export {
 } from './model/roleSelectors';
 
 export {
-    UserSchema,
-    User,
     UserRole,
-} from './model/types/user';
+} from './model/consts/consts';
 
 export {
     getUserInited,
 } from './model/selectors/getUserInited/getUserInited';
+
+export type {
+    User,
+    UserSchema,
+} from './model/types/user';

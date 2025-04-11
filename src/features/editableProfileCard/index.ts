@@ -1,4 +1,4 @@
-export { ProfileSchema } from './model/types/editableProfileCardSchema';
+export type { ProfileSchema } from './model/types/editableProfileCardSchema';
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 export { validateProfileData } from './model/services/validateProfileData/validateProfileData';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';

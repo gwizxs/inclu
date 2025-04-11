@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-export const jestEmpty = function() {
+export const jestEmpty = function () {
     return (
-        <div/>
+        <div />
     );
 };
 export default jestEmpty;

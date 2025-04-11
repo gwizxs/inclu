@@ -3,15 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from 'entities/Article/model/types/article';
+import {
+    Article, ArticleTextBlock,
+} from 'entities/Article/model/types/article';
 import { Text } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Card } from 'shared/ui/Card/Card';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import cls from './ArticleListItem.module.scss'
 import { Icon } from 'shared/ui/Icon/Icon';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleBlockType, ArticleView } from 'entities/Article/model/consts/consts';
+import cls from './ArticleListItem.module.scss';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
 interface ArticleListItemProps {
     className?: string;
     article: Article;
@@ -20,7 +24,9 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const { className, article, view, target } = props;
+    const {
+        className, article, view, target,
+    } = props;
     const { t } = useTranslation();
 
     const types = article.type ? <Text text={article.type.join(', ')} className={cls.types} /> : null;
@@ -70,7 +76,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         <AppLink
             target={target}
             to={RoutePath.article_details + article.id}
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+        >
             <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img alt={article.title} src={article.img} className={cls.img} />
