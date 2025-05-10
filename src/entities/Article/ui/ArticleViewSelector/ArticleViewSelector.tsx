@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/ClassNames/classNames';
+import { classNames } from '@/shared/library/ClassNames/classNames';
 import { memo } from 'react';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';

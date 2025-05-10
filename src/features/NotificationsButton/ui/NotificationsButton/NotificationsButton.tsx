@@ -5,7 +5,7 @@ import { Icon } from '@/shared/ui/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { Popover } from '@/shared/ui/Popups';
 import { NotificationList } from '@/entities/Notifications';
-import classNames from '@/shared/lib/ClassNames/classNames';
+import classNames from '@/shared/library/ClassNames/classNames';
 import { Drawer } from '@/shared/ui/Drawer';
 import s from './NotificationsButton.module.scss';
 

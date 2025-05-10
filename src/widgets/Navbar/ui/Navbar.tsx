@@ -9,11 +9,11 @@ import {
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
-import classNames from '@/shared/lib/ClassNames/classNames';
+import classNames from '@/shared/library/ClassNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider } from '@/shared/library/components/AnimationProvider';
 import cls from './Navbar.module.scss';
 import { RoutePath } from '@/shared/const/router';
 

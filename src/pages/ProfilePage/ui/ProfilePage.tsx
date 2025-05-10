@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/ClassNames/classNames';
+import { classNames } from '@/shared/library/ClassNames/classNames';
 import { Page } from '@/widgets/Page/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';

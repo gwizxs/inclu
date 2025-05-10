@@ -1,4 +1,4 @@
-import { classNames } from '@/shared/lib/ClassNames/classNames';
+import { classNames } from '@/shared/library/ClassNames/classNames';
 import { memo } from 'react';
 import { Text } from '@/shared/ui/Text';
 import { useTranslation } from 'react-i18next';

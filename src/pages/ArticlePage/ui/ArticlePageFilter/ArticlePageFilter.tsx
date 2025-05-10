@@ -1,9 +1,9 @@
-import classNames from "@/shared/lib/ClassNames/classNames";
+import classNames from "@/shared/library/ClassNames/classNames";
 import s from './ArticlePageFilter.module.scss'
 import { ArticleViewSelector } from "@/entities/Article";
 import { useCallback, useMemo } from "react";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useAppDispatch } from "@/shared/library/hooks/useAppDispatch/useAppDispatch";
 import { ArticleSortField, ArticleView } from "@/entities/Article";
 import { useSelector } from "react-redux";
 import { getArticlePageType, getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageView } from "../../model/selectors/articlesPageSelectors";
@@ -13,7 +13,7 @@ import { Input } from "@/shared/ui/Input";
 import { ArticleSortSelector } from "@/features/ArticleSortSelector";
 import { SortOrder } from "@/shared/types/sort";
 import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList";
-import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
+import { useDebounce } from "@/shared/library/hooks/useDebounce/useDebounce";
 import Tabs, { TabsItem } from "@/shared/ui/Tabs";
 import { ArticleType } from "@/entities/Article/model/types/article";
 import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";

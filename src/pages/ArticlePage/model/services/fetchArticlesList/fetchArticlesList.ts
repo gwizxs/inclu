@@ -9,7 +9,7 @@ import {
     getArticlesPageSearch,
     getArticlesPageSort
 } from '../../selectors/articlesPageSelectors';
-import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
+import { addQueryParams } from '@/shared/library/url/addQueryParams/addQueryParams';
 
 
 interface FetchArticlesListProps {

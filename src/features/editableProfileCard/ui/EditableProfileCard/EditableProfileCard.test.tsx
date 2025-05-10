@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { componentRender } from '@/shared/library/tests/componentRender/componentRender';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';

@@ -9,8 +9,8 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import classNames from '@/shared/lib/ClassNames/classNames';
+import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
+import classNames from '@/shared/library/ClassNames/classNames';
 import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {

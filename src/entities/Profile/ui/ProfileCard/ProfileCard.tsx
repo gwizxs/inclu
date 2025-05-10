@@ -1,4 +1,4 @@
-import { classNames, Mods } from '@/shared/lib/ClassNames/classNames';
+import { classNames, Mods } from '@/shared/library/ClassNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 import { Input } from '@/shared/ui/Input';

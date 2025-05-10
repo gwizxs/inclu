@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/ClassNames/classNames';
+import { classNames } from '@/shared/library/ClassNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from '@/shared/library/components/DynamicModuleLoader/DynamicModuleLoader';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { Avatar } from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
@@ -14,7 +14,7 @@ import { ArticleTextBlockComponent } from '@/entities/Article/ui/ArticleTextBloc
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
 import { Icon } from '@/shared/ui/Icon';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useInitialEffect } from '@/shared/library/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '@/entities/Article/model/consts/consts';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
