@@ -16,7 +16,12 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
+    
+};
 
+export const Orange: Story = {
+    args: {
+    },
 };
 
 Light.decorators = [
@@ -25,4 +30,8 @@ Light.decorators = [
 
 Dark.decorators = [
     ThemeDecorator(Theme.DARK),
+];
+
+Orange.decorators = [
+    ThemeDecorator(Theme.ORANGE),
 ];
