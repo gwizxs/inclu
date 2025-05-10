@@ -1,4 +1,3 @@
-export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export { ArticlesDetails } from './ui/ArticleDetails/ArticleDetails';
 
