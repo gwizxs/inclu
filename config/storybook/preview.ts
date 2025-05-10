@@ -14,6 +14,14 @@ const preview: Preview = {
             },
         },
         layout: 'fullscreen',
+        themes: {
+            default: 'dark',
+            list: [
+                { name: 'light', class: Theme.LIGHT, color: '#000000' },
+                { name: 'dark', class: Theme.DARK, color: '#ffffff' },
+                { name: 'orange', class: Theme.ORANGE, color: '#ffa500' },
+            ],
+        },
     },
     decorators: [StyleDecorator,
         (Story) => ThemeDecorator(Theme.LIGHT)(Story),
