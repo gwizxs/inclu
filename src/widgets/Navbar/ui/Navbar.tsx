@@ -15,8 +15,7 @@ import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { AnimationProvider } from '@/shared/library/components/AnimationProvider';
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
-
+import { getRouteArticleCreate } from '@/shared/const/router';
 interface NavbarProps {
     className?: string;
 }
@@ -42,7 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >
