@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "noImplicitAny": true,
+      "module": "ES2020",
+      "target": "es5",
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "strict": true,
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "isolatedModules": true
+    }, 
+    "ts-node": {
+      "compilerOptions": {
+        "module": "CommonJS"
+      }
+    },
+    "include": [
+      "./config/jest/setupTests.ts",
+      "./src/**/*.tsx",
+      "./src/**/*.ts"
+    ]
+  }
