@@ -1,20 +1,26 @@
 import { CSSProperties, memo, useMemo } from "react";
 import s from './Avatar.module.scss'
 import { classNames, Mods } from "@/shared/library/ClassNames/classNames";
+import { AppImage } from "../AppImage";
+import UserFilled from '@/shared/assets/icons/user-filled.svg'
+import { Icon } from "../Icon";
+import { Skeleton } from "../Skeleton";
 
 interface AppLinkProps {
     className?: string;
     src?: string;
     size?: number;
     alt?: string
+    fallbackInverted?: boolean
 }
 
 export const Avatar = memo((props: AppLinkProps) => {
     const {
         className,
         src,
-        size,
-        alt
+        size = 100,
+        alt,
+        fallbackInverted
     } = props
 
     const mods: Mods = {
@@ -22,17 +28,22 @@ export const Avatar = memo((props: AppLinkProps) => {
     }
 
     const styles = useMemo<CSSProperties>(() => ({
-        width: size || 100,
-        height: size || 100,
+        width: size,
+        height: size,
     }), [size])
 
+    const ErrorFallback = <Icon width={size} height={size} Svg={UserFilled} inverted={fallbackInverted} />
+    const Fallback = <Skeleton border={'50%'} width={size} height={size} />
     return (
-        <img
+        <AppImage
             src={src}
             alt={alt}
             style={styles}
             className={classNames(s.Avatar, mods, [className])}
+            fallback={Fallback}
+            errorFallback={ErrorFallback}
         />
+
     );
 }
 )
