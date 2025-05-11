@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [ 18.x ]
 
     steps:
       - uses: actions/checkout@v2
@@ -18,20 +18,25 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: npm ci
       - name: build production project
         run: npm run build:prod
+        if: always()
       - name: linting typescript
+        run: |
+          npm install eslint --save-dev
+          npm run lint
         if: always()
-        run: npm run lint
       - name: linting css
+        run: |
+          npm install stylelint --save-dev
+          npm run lint:style
         if: always()
-        run: npm run lint:style
       - name: unit testing
-        if: always()
         run: npm run unit
-      - name: build storybook
         if: always()
+      - name: build storybook
         run: npm run storybook:build
+        if: always()
 #      - name: screenshot testing
 #        run: npm run test:ui:ci
