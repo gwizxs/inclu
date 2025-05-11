@@ -1,5 +1,5 @@
 export const AdminPanelPage = () => {
-    return <div />;
+    return <div data-testid={'AdminPanelPage'} />;
 };
 
 export default AdminPanelPage;
