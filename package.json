@@ -11,7 +11,7 @@
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "lint": "npx eslint .",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "npx eslint . --fix",
     "lint:style": "npx stylelint '**/*.scss'",
     "lint:style:fix": "npx stylelint '**/*.scss' --fix",
@@ -27,6 +27,9 @@
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "clear:cache": "node ./scripts/clear-cache.js"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
   },
   "keywords": [],
   "author": "",
