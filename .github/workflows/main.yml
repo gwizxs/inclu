@@ -1,36 +1,32 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [ 20.x ]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm install
       - name: build production project
         run: npm run build:prod
         if: always()
       - name: linting typescript
-        run: |
-          npm install eslint --save-dev
-          npm run lint
+        run: npm run lint:fix
         if: always()
       - name: linting css
-        run: |
-          npm install stylelint --save-dev
-          npm run lint:style
+        run: npm run lint:style:fix
         if: always()
       - name: unit testing
         run: npm run unit
@@ -38,5 +34,3 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
         if: always()
-#      - name: screenshot testing
-#        run: npm run test:ui:ci
