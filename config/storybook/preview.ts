@@ -23,11 +23,14 @@ const preview: Preview = {
             ],
         },
     },
+
     decorators: [StyleDecorator,
         (Story) => ThemeDecorator(Theme.LIGHT)(Story),
         RouterDecorator,
         SuspenseDecorator,
     ],
+
+    tags: ['autodocs']
 };
 
 export default preview;
