@@ -4,6 +4,7 @@ const config: StorybookConfig = {
     stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 
     addons: [
+        'storybook-addon-mock',
         '@storybook/addon-webpack5-compiler-swc',
         '@storybook/addon-onboarding',
         {
@@ -15,7 +16,6 @@ const config: StorybookConfig = {
         '@chromatic-com/storybook',
         '@storybook/addon-interactions',
         '@storybook/addon-webpack5-compiler-babel',
-        'storybook-addon-mock',
         'storybook-addon-themes',
     ],
 

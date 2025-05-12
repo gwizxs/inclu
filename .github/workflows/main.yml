@@ -69,16 +69,16 @@ jobs:
       - name: install modules
         run: npm ci --force
       - name: build production project
-        run: npm run build:prod
+        run: npm run build:prod --force
         if: always()
       - name: build storybook
-        run: npm run storybook:build
+        run: npm run storybook:build --force
         if: always()
       - name: screenshot testing
-        run: npm run test:ui:ci
+        run: npm run test:ui:ci --force
         if: always()
       - name: Generate HTML report
-        run: npm run test:ui:report
+        run: npm run test:ui:report --force
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -107,10 +107,10 @@ jobs:
       - name: install modules
         run: npm ci --force
       - name: linting typescript
-        run: npm run lint:ts
+        run: npm run lint:ts --force
         if: always()
       - name: linting css
-        run: npm run lint:scss
+        run: npm run lint:scss --force
       - name: unit testing
         if: always()
-        run: npm run test:unit
+        run: npm run test:unit --force
