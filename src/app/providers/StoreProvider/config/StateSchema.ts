@@ -4,7 +4,6 @@ import { LoginSchema } from '@/features/AuthByUsername';
 import {
     AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CombinedState } from 'redux';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticlesPageSchema } from '@/pages/ArticlePage';
 import { ScrollRecoverySchema } from '@/features/ScrollRecovery';
@@ -13,6 +12,7 @@ import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/editableProfileCard';
+import { CombinedState } from '@reduxjs/toolkit/query';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -34,7 +34,7 @@ export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+    reduce: (state: StateSchema, action: AnyAction) => StateSchema;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
     // true - inited false - not inited

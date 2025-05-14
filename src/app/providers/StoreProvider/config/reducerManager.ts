@@ -16,14 +16,18 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         getReducerMap: () => reducers,
         getMountedReducers: () => mountedReucers,
         reduce: (state: StateSchema, action: AnyAction) => {
-            if (keysToRemove.length > 0) {
+            if (keysToRemove.length > 0 && state) {
                 state = { ...state };
                 keysToRemove.forEach((key) => {
                     delete state[key];
                 });
                 keysToRemove = [];
             }
-            return combinedReducer(state, action);
+            
+            // Приводим к типу RootState, который возвращает combineReducers
+            type RootState = ReturnType<typeof combinedReducer>;
+            // Затем обратно к StateSchema
+            return combinedReducer(state as RootState, action) as unknown as StateSchema;
         },
         add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {

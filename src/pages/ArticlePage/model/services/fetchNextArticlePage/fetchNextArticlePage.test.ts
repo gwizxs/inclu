@@ -6,7 +6,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage.test', () => {
     test('success', async () => {
-        const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage as any, {
             articlesPage: {
                 page: 2,
                 ids: [],
@@ -17,13 +17,14 @@ describe('fetchNextArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(undefined);
 
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalledWith({});
     });
+
     test('fetchAritcleList not called', async () => {
-        const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage as any, {
             articlesPage: {
                 page: 2,
                 ids: [],
@@ -34,27 +35,27 @@ describe('fetchNextArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk(undefined);
 
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
     });
-});
 
-test('isLoading true', async () => {
-    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-        articlesPage: {
-            page: 2,
-            ids: [],
-            entities: {},
-            limit: 5,
-            isLoading: true,
-            hasMore: true,
-        },
+    test('isLoading true', async () => {
+        const thunk = new TestAsyncThunk(fetchNextArticlesPage as any, {
+            articlesPage: {
+                page: 2,
+                ids: [],
+                entities: {},
+                limit: 5,
+                isLoading: true,
+                hasMore: true,
+            },
+        });
+
+        await thunk.callThunk(undefined);
+
+        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(fetchArticlesList).not.toHaveBeenCalled();
     });
-
-    await thunk.callThunk();
-
-    expect(thunk.dispatch).toBeCalledTimes(2);
-    expect(fetchArticlesList).not.toHaveBeenCalled();
 });

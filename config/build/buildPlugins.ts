@@ -29,6 +29,7 @@ export function buildPlugins({
             new webpack.HotModuleReplacementPlugin(),
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
+                analyzerPort: 8889,
             })
         );
     }
