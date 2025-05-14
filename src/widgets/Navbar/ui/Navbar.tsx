@@ -6,7 +6,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import {
     getUserAuthData,
 } from '@/entities/User';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
 import classNames from '@/shared/library/ClassNames/classNames';
@@ -15,6 +15,7 @@ import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { TextTheme } from '@/shared/ui/Text/Text';
 interface NavbarProps {
     className?: string;
 }

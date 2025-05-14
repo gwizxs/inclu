@@ -798,15 +798,28 @@
       "id": "1",
       "username": "manager",
       "password": "123",
-      "role": "MANAGER",
+      "role": [
+        "MANAGER"
+      ],
       "avatar": "https://sun9-49.userapi.com/impg/dGhKCjcHLmr1tu9cRaoa9HEiIjROijtCvfkxng/CMHjGiuimKo.jpg?size=800x800&quality=96&sign=ce7d464b29ccb693a475df038f4c5f93&c_uniq_tag=Yv6OMvP70wJkS1fqY1czc2HSpWijguyQzkuNxqJje1A&type=album"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "role": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://sun9-49.userapi.com/impg/dGhKCjcHLmr1tu9cRaoa9HEiIjROijtCvfkxng/CMHjGiuimKo.jpg?size=800x800&quality=96&sign=ce7d464b29ccb693a475df038f4c5f93&c_uniq_tag=Yv6OMvP70wJkS1fqY1czc2HSpWijguyQzkuNxqJje1A&type=album"
     }
   ],
   "profile": [
