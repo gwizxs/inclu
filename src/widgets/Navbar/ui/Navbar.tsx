@@ -13,7 +13,6 @@ import classNames from '@/shared/library/ClassNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationsButton } from '@/features/NotificationsButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { AnimationProvider } from '@/shared/library/components/AnimationProvider';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 interface NavbarProps {

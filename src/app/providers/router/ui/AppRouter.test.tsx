@@ -1,8 +1,9 @@
-import { componentRender } from "@/shared/library/tests/componentRender/componentRender";
-import { AppRouter } from "..";
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from "@/shared/const/router";
-import { screen } from "@testing-library/react";
-import { UserRole } from "@/entities/User";
+import { screen } from '@testing-library/react';
+import { componentRender } from '@/shared/library/tests/componentRender/componentRender';
+import { AppRouter } from '..';
+import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { UserRole } from '@/entities/User';
+
 describe('app/router/AppRouter', () => {
     test('should render', async () => {
         componentRender(<AppRouter />, {

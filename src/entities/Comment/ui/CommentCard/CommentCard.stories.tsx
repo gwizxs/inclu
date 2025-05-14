@@ -1,4 +1,4 @@
-import type { Meta, StoryObj, ArgTypes } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {

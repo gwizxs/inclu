@@ -1,4 +1,4 @@
-import type { Meta, StoryObj, ArgTypes } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleImageBlockComponent } from './ArticleImageBlockComponent';
 import { ArticleBlockType } from '../../model/consts/consts';
 

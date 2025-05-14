@@ -4,7 +4,8 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import ArticlePage from './ArticlePage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleType } from '@/entities/Article';
-import img from '@/shared/assets/tests/avatar.jpg'
+import img from '@/shared/assets/tests/avatar.jpg';
+
 const meta: Meta<typeof ArticlePage> = {
     title: 'pages/ArticlePage',
     component: ArticlePage,
@@ -23,7 +24,7 @@ const meta: Meta<typeof ArticlePage> = {
                     id: '1',
                     title: 'Article 1',
                     subtitle: 'Subtitle 1',
-                    img: img,
+                    img,
                     user: { id: '1', username: 'admin' },
                     blocks: [],
                     type: [ArticleType.IT],
@@ -36,7 +37,7 @@ const meta: Meta<typeof ArticlePage> = {
     parameters: {
         mockData: [
             {
-                url: `http://localhost:8000/articles?_expand=user&_page=1&_limit=9&_sort=createdAt&_order=asc&q=`,
+                url: 'http://localhost:8000/articles?_expand=user&_page=1&_limit=9&_sort=createdAt&_order=asc&q=',
                 method: 'GET',
                 status: 200,
                 response: [
@@ -44,7 +45,7 @@ const meta: Meta<typeof ArticlePage> = {
                         id: '1',
                         title: 'Article 1',
                         subtitle: 'Subtitle 1',
-                        img: img,
+                        img,
                         user: { id: '1', username: 'admin' },
                         views: 1023,
                         createdAt: '2023-05-15',
@@ -53,9 +54,9 @@ const meta: Meta<typeof ArticlePage> = {
                     },
                     {
                         id: '2',
-                        title: 'Article 2', 
+                        title: 'Article 2',
                         subtitle: 'Subtitle 2',
-                        img: img,
+                        img,
                         user: { id: '1', username: 'admin' },
                         views: 1023,
                         createdAt: '2023-05-15',

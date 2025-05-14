@@ -3,7 +3,6 @@ import { Currency } from '@/entities/Currency';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { profileActions, profileReducer } from './profileSlice';
 import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
-import { AnyAction } from '@reduxjs/toolkit';
 
 const data = {
     username: 'admin',

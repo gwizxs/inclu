@@ -95,7 +95,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         className={cls.img}
                         fallback={<Skeleton width={'100%'} height={200} className={cls.img} />}
                         errorFallback={<Text text={t('Ошибка загрузки изображения')} />}
-                        />
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>

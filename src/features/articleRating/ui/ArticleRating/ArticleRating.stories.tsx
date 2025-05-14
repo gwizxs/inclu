@@ -26,7 +26,7 @@ export const Default: Story = {
     parameters: {
         mockData: [
             {
-                url: `http://localhost:8000/article-ratings?userId=1&articleId=1`,
+                url: 'http://localhost:8000/article-ratings?userId=1&articleId=1',
                 method: 'GET',
                 status: 200,
                 response: [

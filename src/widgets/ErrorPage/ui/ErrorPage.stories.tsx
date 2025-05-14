@@ -16,7 +16,7 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-    
+
 };
 
 export const Orange: Story = {

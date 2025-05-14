@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleType } from '@/entities/Article';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-import img from '@/shared/assets/tests/avatar.jpg'
+import img from '@/shared/assets/tests/avatar.jpg';
+
 const meta: Meta<typeof ArticleRecommendationsList> = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
@@ -22,7 +23,7 @@ type Story = StoryObj<typeof ArticleRecommendationsList>;
 const articles: Article[] = [
     {
         id: '1',
-        img: img,
+        img,
         createdAt: '2023-05-15',
         views: 1023,
         user: { id: '1', username: 'admin' },
@@ -33,7 +34,7 @@ const articles: Article[] = [
     },
     {
         id: '2',
-        img: img,
+        img,
         createdAt: '2023-06-20',
         views: 845,
         user: { id: '2', username: 'developer' },
@@ -44,7 +45,7 @@ const articles: Article[] = [
     },
     {
         id: '3',
-        img: img,
+        img,
         createdAt: '2023-07-10',
         views: 567,
         user: { id: '3', username: 'economist' },
@@ -60,7 +61,7 @@ export const Normal: Story = {
     parameters: {
         mockData: [
             {
-                url: `http://localhost:8000/articles/recommendations?_limit=3`,
+                url: 'http://localhost:8000/articles/recommendations?_limit=3',
                 method: 'GET',
                 status: 200,
                 response: articles,

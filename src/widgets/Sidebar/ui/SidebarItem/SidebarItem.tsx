@@ -1,4 +1,4 @@
-import { useSSR, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { memo } from 'react';
 import { classNames } from '@/shared/library/ClassNames/classNames';

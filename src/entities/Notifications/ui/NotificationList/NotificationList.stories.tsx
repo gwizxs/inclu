@@ -29,7 +29,7 @@ const meta: Meta<typeof NotificationList> = {
                 response: [
                     {
                         id: '1',
-                        title: 'Notification 1', 
+                        title: 'Notification 1',
                         description: 'Description 1',
                         userId: '1',
                         href: '#',
@@ -57,7 +57,7 @@ const meta: Meta<typeof NotificationList> = {
                 response: [
                     {
                         id: '1',
-                        title: 'Notification 1', 
+                        title: 'Notification 1',
                         description: 'Description 1',
                         userId: '1',
                         href: '#',
@@ -77,7 +77,7 @@ const meta: Meta<typeof NotificationList> = {
                         href: '#',
                     },
                 ],
-            }
+            },
         ],
     },
 };
@@ -122,7 +122,7 @@ export const WithLink: Story = {
                         href: '#',
                     },
                 ],
-            }
+            },
         ],
     },
 };

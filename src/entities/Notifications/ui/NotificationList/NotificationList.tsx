@@ -19,7 +19,8 @@ export const NotificationList = (props: NotificationListProps) => {
         return (
             <VStack gap="16" max className={classNames(s.NotificationList, {}, [className])}>
                 {Array.from({ length: 5 }).map((_, index) => (
-                    <Skeleton key={index} className={s.NotificationList} width="100%" height={150} border="8px" />
+                    <Skeleton key={index} className={s.NotificationList} width="100%" height={150}
+                        border="8px" />
                 ))}
             </VStack>
         );
