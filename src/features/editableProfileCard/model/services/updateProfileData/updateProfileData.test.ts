@@ -17,7 +17,7 @@ const data = {
 
 describe('updateProfileData.test', () => {
     test('success', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, {
+        const thunk = new TestAsyncThunk(updateProfileData as any, {
             profile: {
                 form: data,
             },
@@ -25,7 +25,7 @@ describe('updateProfileData.test', () => {
 
         thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk(undefined);
 
         expect(thunk.api.put).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -33,14 +33,14 @@ describe('updateProfileData.test', () => {
     });
 
     test('error', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, {
+        const thunk = new TestAsyncThunk(updateProfileData as any, {
             profile: {
                 form: data,
             },
         });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk(undefined);
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([
@@ -49,12 +49,12 @@ describe('updateProfileData.test', () => {
     });
 
     test('validate error', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, {
+        const thunk = new TestAsyncThunk(updateProfileData as any, {
             profile: {
                 form: { ...data, lastname: '' },
             },
         });
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk(undefined);
 
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([
