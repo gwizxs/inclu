@@ -15,7 +15,7 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
 
     if (view === ArticleView.BIG) {
         return (
-            <div className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
+            <div data-testid="ArticleListItem" className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
                 <Card className={s.card}>
                     <div className={s.header}>
                         <Skeleton border="50%" height={30} width={30} />
@@ -33,7 +33,7 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
     }
 
     return (
-        <div className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
+        <div data-testid="ArticleListItem" className={classNames(s.ArticleListItem, {}, [className, s[view]])}>
             <Card className={s.card}>
                 <div className={s.imageWrapper}>
                     <Skeleton width={200} height={200} className={s.img} />

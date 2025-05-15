@@ -89,6 +89,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 scrollTop,
             }) => (
                 <div
+                    data-testid="ArticleList"
                     ref={registerChild}
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 >

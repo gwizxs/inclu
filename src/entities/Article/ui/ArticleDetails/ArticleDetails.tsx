@@ -100,16 +100,17 @@ export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <div data-testid="ArticleDetails.Avatar" className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
                 </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
+                    <Text
+                        className={cls.title}
+                        title={article?.title}
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
@@ -119,8 +120,9 @@ export const ArticlesDetails = memo((props: ArticleDetailsProps) => {
                 </div>
                 <div className={cls.articleInfo}>
                     <Icon Svg={CalendarIcon} />
-                    <Text text={article?.createdAt} />
-                </div>
+                        <Text text={article?.createdAt} />
+                    </div>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );
