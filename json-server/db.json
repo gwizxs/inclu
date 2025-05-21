@@ -566,6 +566,83 @@
       ],
       "blocks": [],
       "id": "No3FQw5"
+    },
+    {
+      "id": "4Y9GKG6",
+      "title": "Kotlin news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ]
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "yrHGeEW"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "76e6tbJ"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "aP7eUCF"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "FZ9TaJV"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "UT2FLDw"
     }
   ],
   "comments": [
