@@ -2,16 +2,17 @@ import { Article } from '@/entities/Article';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 const recommendationsApi = rtkApi.injectEndpoints({
-    endpoints: (builder) => ({
-        getArticleRecommendationsList: builder.query<Article[], number>({
-            query: (limit) => ({
-                url: '/articles',
-                params: {
-                    _limit: limit,
-                },
-            }),
-        }),
+  endpoints: (builder) => ({
+    getArticleRecommendationsList: builder.query<Article[], number>({
+      query: (limit) => ({
+        url: '/articles',
+        params: {
+          _limit: limit,
+        },
+      }),
     }),
+  }),
 });
 
-export const useArticleRecommendationsListQuery = recommendationsApi.useGetArticleRecommendationsListQuery;
+export const useArticleRecommendationsListQuery =
+  recommendationsApi.useGetArticleRecommendationsListQuery;

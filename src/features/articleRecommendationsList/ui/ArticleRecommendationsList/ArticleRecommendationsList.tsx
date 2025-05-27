@@ -7,29 +7,36 @@ import { VStack } from '@/shared/ui/Stack';
 import { useArticleRecommendationsListQuery } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
-    className?: string;
+  className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
+export const ArticleRecommendationsList = memo(
+  (props: ArticleRecommendationsListProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const { data: article, isLoading, error } = useArticleRecommendationsListQuery(4);
+    const {
+      data: article,
+      isLoading,
+      error,
+    } = useArticleRecommendationsListQuery(4);
 
     if (isLoading || error || !article || article.length === 0) {
-        return null;
+      return null;
     }
     return (
-        <VStack data-testid="ArticleRecommendationsList" gap='8' className={classNames('', {}, [className])}>
-            <Text
-                size={TextSize.L}
-                title={t('Рекомендуем')}
-            />
-            <ArticleList
-                articles={article}
-                isLoading={isLoading}
-                target="_blank"
-                virtualized={false}
-            />
-        </VStack>
+      <VStack
+        data-testid="ArticleRecommendationsList"
+        gap="8"
+        className={classNames('', {}, [className])}
+      >
+        <Text size={TextSize.L} title={t('Рекомендуем')} />
+        <ArticleList
+          articles={article}
+          isLoading={isLoading}
+          target="_blank"
+          virtualized={false}
+        />
+      </VStack>
     );
-});
+  },
+);

@@ -8,18 +8,18 @@ project.addSourceFilesAtPaths('src/**/*.tsx');
 const files = project.getSourceFiles();
 
 function isAbsolute(value: string) {
-    const layers = ['app', 'shared', 'widgets', 'features', 'entities', 'pages'];
-    return layers.some((layer) => value.startsWith(layer));
+  const layers = ['app', 'shared', 'widgets', 'features', 'entities', 'pages'];
+  return layers.some((layer) => value.startsWith(layer));
 }
 files.forEach((sourceFile) => {
-    const importDeclarations = sourceFile.getImportDeclarations();
+  const importDeclarations = sourceFile.getImportDeclarations();
 
-    importDeclarations.forEach((importDeclaration) => {
-        const value = importDeclaration.getModuleSpecifierValue();
-        if (isAbsolute(value)) {
-            importDeclaration.setModuleSpecifier(`@/${value}`);
-        }
-    });
+  importDeclarations.forEach((importDeclaration) => {
+    const value = importDeclaration.getModuleSpecifierValue();
+    if (isAbsolute(value)) {
+      importDeclaration.setModuleSpecifier(`@/${value}`);
+    }
+  });
 });
 
 project.save();

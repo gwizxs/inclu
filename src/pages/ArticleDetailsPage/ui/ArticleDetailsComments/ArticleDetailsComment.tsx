@@ -15,38 +15,38 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import cls from '../ArticleDetailsPage/ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsCommentProps {
-    id: string;
+  id: string;
 }
 
 export const ArticleDetailsComment = (props: ArticleDetailsCommentProps) => {
-    const { id } = props;
-    const { t } = useTranslation();
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useAppDispatch();
+  const { id } = props;
+  const { t } = useTranslation();
+  const comments = useSelector(getArticleComments.selectAll);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const dispatch = useAppDispatch();
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch],
+  );
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    });
+  useInitialEffect(() => {
+    dispatch(fetchCommentsByArticleId(id));
+  });
 
-    return (
-        <div className={classNames(cls.ArticleDetailsComment)}>
-            <Text
-                size={TextSize.L}
-                className={cls.commentTitle}
-                title={t('Комментарии')}
-            />
-            <Suspense fallback={<Loader />}>
-                <AddCommentForm onSendComment={onSendComment} />
-            </Suspense>
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
-        </div>
-    );
+  return (
+    <div className={classNames(cls.ArticleDetailsComment)}>
+      <Text
+        size={TextSize.L}
+        className={cls.commentTitle}
+        title={t('Комментарии')}
+      />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
+      <CommentList isLoading={commentsIsLoading} comments={comments} />
+    </div>
+  );
 };

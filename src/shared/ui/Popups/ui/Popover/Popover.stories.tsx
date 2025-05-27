@@ -4,22 +4,26 @@ import { Button } from '@/shared/ui/Button';
 import { Popover } from './Popover';
 
 const meta = {
-    title: 'shared/Popups/Popover',
-    component: Popover,
-    parameters: {
-        layout: 'centered',
-    },
-    decorators: [
-        (Story: React.ComponentType) => <div style={{ padding: '6.25rem' }}><Story /></div>,
-    ],
+  title: 'shared/Popups/Popover',
+  component: Popover,
+  parameters: {
+    layout: 'centered',
+  },
+  decorators: [
+    (Story: React.ComponentType) => (
+      <div style={{ padding: '6.25rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Popover>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
-    args: {
-        trigger: <Button>Open</Button>,
-        children: <div>Popover content</div>,
-    },
+  args: {
+    trigger: <Button>Open</Button>,
+    children: <div>Popover content</div>,
+  },
 };

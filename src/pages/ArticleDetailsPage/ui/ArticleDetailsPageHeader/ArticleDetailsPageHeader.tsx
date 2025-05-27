@@ -10,9 +10,10 @@ import { getCanEditArticle } from '../../model/selectors/article';
 import { getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string
+  className?: string;
 }
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = memo(
+  (props: ArticleDetailsPageHeaderProps) => {
     const { className } = props;
     const { t } = useTranslation('article-details');
     const navigate = useNavigate();
@@ -20,30 +21,28 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     const canEdit = useSelector(getCanEditArticle);
 
     const onBackToList = useCallback(() => {
-        navigate(getRouteArticles());
+      navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${getRouteArticles()}/${article?.id}/edit`);
+      navigate(`${getRouteArticles()}/${article?.id}/edit`);
     }, [navigate, article?.id]);
 
     return (
-        <div className={classNames(s.ArticleDetailsPageHeader, {}, [className])}>
-            <Button
-                theme={ButtonTheme.OUTLINE}
-                onClick={onBackToList}
-            >
-                {t('Назад')}
-            </Button>
-            {canEdit && (
-                <Button
-                    className={s.editBtn}
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onEditArticle}
-                >
-                    {t('Редактировать')}
-                </Button>
-            )}
-        </div>
+      <div className={classNames(s.ArticleDetailsPageHeader, {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+          {t('Назад')}
+        </Button>
+        {canEdit && (
+          <Button
+            className={s.editBtn}
+            theme={ButtonTheme.OUTLINE}
+            onClick={onEditArticle}
+          >
+            {t('Редактировать')}
+          </Button>
+        )}
+      </div>
     );
-});
+  },
+);

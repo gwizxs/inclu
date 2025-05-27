@@ -4,34 +4,23 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import PageError from './ErrorPage';
 
 const meta: Meta<typeof PageError> = {
-    title: 'widgets/PageError',
-    component: PageError,
+  title: 'widgets/PageError',
+  component: PageError,
 };
 
 export default meta;
 type Story = StoryObj<typeof PageError>;
 
-export const Light: Story = {
+export const Light: Story = {};
 
-};
-
-export const Dark: Story = {
-
-};
+export const Dark: Story = {};
 
 export const Orange: Story = {
-    args: {
-    },
+  args: {},
 };
 
-Light.decorators = [
-    ThemeDecorator(Theme.LIGHT),
-];
+Light.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-];
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-Orange.decorators = [
-    ThemeDecorator(Theme.ORANGE),
-];
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

@@ -1,8 +1,6 @@
 import React from 'react';
 
 export const jestEmpty = function () {
-    return (
-        <div />
-    );
+  return <div />;
 };
 export default jestEmpty;

@@ -1,8 +1,8 @@
-import * as common from "./commands/common";
-import * as profile from "./commands/profile";
-import * as article from "./commands/article";
-import * as comments from "./commands/comments";
-import * as rating from "./commands/rating";
+import * as common from './commands/common';
+import * as profile from './commands/profile';
+import * as article from './commands/article';
+import * as comments from './commands/comments';
+import * as rating from './commands/rating';
 
 Cypress.Commands.addAll(common);
 Cypress.Commands.addAll(profile);

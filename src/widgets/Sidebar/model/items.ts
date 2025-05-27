@@ -1,3 +1,3 @@
 export interface SidebarItem {
-    id: string;
+  id: string;
 }

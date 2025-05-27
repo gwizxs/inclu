@@ -6,31 +6,32 @@ import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDec
 import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
-    parameters: {
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/i,
-            },
-        },
-        layout: 'fullscreen',
-        themes: {
-            default: 'dark',
-            list: [
-                { name: 'light', class: Theme.LIGHT, color: '#000000' },
-                { name: 'dark', class: Theme.DARK, color: '#ffffff' },
-                { name: 'orange', class: Theme.ORANGE, color: '#ffa500' },
-            ],
-        },
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
     },
+    layout: 'fullscreen',
+    themes: {
+      default: 'dark',
+      list: [
+        { name: 'light', class: Theme.LIGHT, color: '#000000' },
+        { name: 'dark', class: Theme.DARK, color: '#ffffff' },
+        { name: 'orange', class: Theme.ORANGE, color: '#ffa500' },
+      ],
+    },
+  },
 
-    decorators: [StyleDecorator,
-        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
-        RouterDecorator,
-        SuspenseDecorator,
-    ],
+  decorators: [
+    StyleDecorator,
+    (Story) => ThemeDecorator(Theme.LIGHT)(Story),
+    RouterDecorator,
+    SuspenseDecorator,
+  ],
 
-    tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;

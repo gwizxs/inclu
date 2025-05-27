@@ -1,3 +1,3 @@
 export type TestProps = {
-    'data-testid'?: string
-}
+  'data-testid'?: string;
+};

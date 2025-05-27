@@ -5,36 +5,33 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import LoginForm from './LoginForm';
 
 const meta: Meta<typeof LoginForm> = {
-    title: 'features/AuthByUsername/LoginForm',
-    component: LoginForm,
+  title: 'features/AuthByUsername/LoginForm',
+  component: LoginForm,
 };
 
 export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
-export const Light: Story = {
-};
+export const Light: Story = {};
 
-export const Dark: Story = {
-
-};
+export const Dark: Story = {};
 
 Light.decorators = [
-    ThemeDecorator(Theme.LIGHT),
-    StoreDecorator({
-        loginForm: {
-            username: '123',
-            password: '123',
-        },
-    }),
+  ThemeDecorator(Theme.LIGHT),
+  StoreDecorator({
+    loginForm: {
+      username: '123',
+      password: '123',
+    },
+  }),
 ];
 
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        loginForm: {
-            username: '123',
-            password: '123',
-        },
-    }),
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    loginForm: {
+      username: '123',
+      password: '123',
+    },
+  }),
 ];

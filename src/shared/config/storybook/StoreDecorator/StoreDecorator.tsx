@@ -8,18 +8,20 @@ import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slic
 import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
 
 const defaultAsyncReducers: ReducersList = {
-    loginForm: loginReducer,
-    profile: profileReducer,
-    articleDetails: articleDetailsReducer,
-    addCommentForm: addCommentFormReducer,
-    articleDetailsPage: articleDetailsPageReducer,
+  loginForm: loginReducer,
+  profile: profileReducer,
+  articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
-export const StoreDecorator = (
-    state: DeepPartial<StateSchema>,
-    asyncReducers?: ReducersList,
-) => (StoryComponent: any) => (
-    <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-        <StoryComponent />
+export const StoreDecorator =
+  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
+  (StoryComponent: any) => (
+    <StoreProvider
+      initialState={state}
+      asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+    >
+      <StoryComponent />
     </StoreProvider>
-);
+  );

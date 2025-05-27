@@ -6,31 +6,44 @@ import s from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationListProps {
-    className?: string;
+  className?: string;
 }
 
 export const NotificationList = (props: NotificationListProps) => {
-    const { className } = props;
-    const { data, isLoading } = useNotificationsQuery(null, {
-        pollingInterval: 5000,
-    });
+  const { className } = props;
+  const { data, isLoading } = useNotificationsQuery(null, {
+    pollingInterval: 5000,
+  });
 
-    if (isLoading) {
-        return (
-            <VStack gap="16" max className={classNames(s.NotificationList, {}, [className])}>
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <Skeleton key={index} className={s.NotificationList} width="100%" height={150}
-                        border="8px" />
-                ))}
-            </VStack>
-        );
-    }
-
+  if (isLoading) {
     return (
-        <VStack gap="16" max className={classNames(s.NotificationList, {}, [className])}>
-            {data?.map((notification) => (
-                <NotificationItem key={notification.id} item={notification} />
-            ))}
-        </VStack>
+      <VStack
+        gap="16"
+        max
+        className={classNames(s.NotificationList, {}, [className])}
+      >
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Skeleton
+            key={index}
+            className={s.NotificationList}
+            width="100%"
+            height={150}
+            border="8px"
+          />
+        ))}
+      </VStack>
     );
+  }
+
+  return (
+    <VStack
+      gap="16"
+      max
+      className={classNames(s.NotificationList, {}, [className])}
+    >
+      {data?.map((notification) => (
+        <NotificationItem key={notification.id} item={notification} />
+      ))}
+    </VStack>
+  );
 };

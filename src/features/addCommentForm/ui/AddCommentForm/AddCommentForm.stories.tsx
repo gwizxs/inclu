@@ -6,28 +6,23 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import AddCommentForm from './AddCommentForm';
 
 const meta: Meta<typeof AddCommentForm> = {
-    title: 'features/AddCommentForm',
-    component: AddCommentForm,
-    decorators: [
-        StoreDecorator({}),
-    ],
+  title: 'features/AddCommentForm',
+  component: AddCommentForm,
+  decorators: [StoreDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof AddCommentForm>;
 
 export const Primary: Story = {
-    args: {
-        onSendComment: fn(),
-    },
+  args: {
+    onSendComment: fn(),
+  },
 };
 
 export const Dark: Story = {
-    args: {
-        onSendComment: fn(),
-    },
-    decorators: [
-        StoreDecorator({}),
-        ThemeDecorator(Theme.DARK),
-    ],
+  args: {
+    onSendComment: fn(),
+  },
+  decorators: [StoreDecorator({}), ThemeDecorator(Theme.DARK)],
 };

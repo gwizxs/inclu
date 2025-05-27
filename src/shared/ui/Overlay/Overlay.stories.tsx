@@ -4,24 +4,22 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Overlay } from './Overlay';
 
 const meta: Meta<typeof Overlay> = {
-    title: 'shared/Overlay',
-    component: Overlay,
+  title: 'shared/Overlay',
+  component: Overlay,
 };
 
 export default meta;
 type Story = StoryObj<typeof Overlay>;
 
 export const Primary: Story = {
-    args: {
-        onClick: () => {},
-    },
+  args: {
+    onClick: () => {},
+  },
 };
 
 export const Dark: Story = {
-    args: {
-        onClick: () => {},
-    },
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+  args: {
+    onClick: () => {},
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
 };

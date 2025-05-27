@@ -5,45 +5,45 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Sidebar } from './Sidebar';
 
 const meta: Meta<typeof Sidebar> = {
-    title: 'widgets/Sidebar',
-    component: Sidebar,
+  title: 'widgets/Sidebar',
+  component: Sidebar,
 };
 
 export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
 export const Light: Story = {
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-        StoreDecorator({
-            user: { authData: {} },
-        }),
-    ],
+  decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
 };
 
 export const Dark: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        StoreDecorator({
-            user: { authData: {} },
-        }),
-    ],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
 };
 
 export const Auth: Story = {
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-        StoreDecorator({
-            user: { authData: {} },
-        }),
-    ],
+  decorators: [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
 };
 
 export const NoAuth: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-        StoreDecorator({
-            user: {},
-        }),
-    ],
+  decorators: [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+      user: {},
+    }),
+  ],
 };
