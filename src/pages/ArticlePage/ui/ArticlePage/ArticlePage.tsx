@@ -11,6 +11,9 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { ArticlePageFilter } from '../ArticlePageFilter/ArticlePageFilter';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { useSearchParams } from 'react-router-dom';
+import { useArticleItemById } from '../../model/selectors/articlesPageSelectors';
+import { useTranslation } from 'react-i18next';
 
 interface ArticlesPageProps {
   className?: string;
@@ -23,6 +26,9 @@ const reducers: ReducersList = {
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const data = useArticleItemById(searchParams.get('id') || '');
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
