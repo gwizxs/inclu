@@ -145,6 +145,25 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ---
 
+### Работа c Feature-flags 
+
+Feature flags позволяют управлять функциональностью приложения. Принимает объект с опциями:
+
+- `name` (string) - название feature flag
+- `state` - состояние флага:
+  - `on` - включен
+  - `off` - выключен
+
+Пример использования:
+```typescript
+{
+  name: 'isArticleEnabled',
+  state: 'on'
+}
+```
+
+---
+
 ## Сущности (entities)
 
 - [Article](/src/entities/Article)
