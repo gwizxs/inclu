@@ -16,3 +16,4 @@ export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 export type { User, UserSchema } from './model/types/user';
 
 export { useJsonSettings, getJsonSettings } from './model/selectors/jsonSettings';
+export { initAuthData } from './model/services/initAuthData';
