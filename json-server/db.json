@@ -1036,6 +1036,13 @@
       "articleId": "16",
       "rate": 4,
       "id": "ASWOcLy"
+    },
+    {
+      "userId": "2",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "odkororf",
+      "id": "aY5Asjf"
     }
   ],
   "profile-ratings": [

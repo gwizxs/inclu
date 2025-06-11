@@ -14,6 +14,9 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleDetailsComment } from '../ArticleDetailsComments/ArticleDetailsComment';
 import { ArticleRating } from '@/features/articleRating';
+import { ToggleFeatures } from '@/shared/library/features';
+import { Card } from '@/shared/ui/Card';
+import { Text } from '@/shared/ui/Text';
 
 interface ArticleDetailsPageProps {
   className?: string;

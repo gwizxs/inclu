@@ -28,7 +28,8 @@
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "prepare": "husky install",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "clear:cache": "node ./scripts/clear-cache.js"
+    "clear:cache": "node ./scripts/clear-cache.js",
+    "remove-feature": "ts-node ./scripts/remove-feature.ts"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
