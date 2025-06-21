@@ -871,11 +871,12 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "avatar": "https://sun9-49.userapi.com/impg/dGhKCjcHLmr1tu9cRaoa9HEiIjROijtCvfkxng/CMHjGiuimKo.jpg?size=800x800&quality=96&sign=ce7d464b29ccb693a475df038f4c5f93&c_uniq_tag=Yv6OMvP70wJkS1fqY1czc2HSpWijguyQzkuNxqJje1A&type=album",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_orange_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true

@@ -13,6 +13,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/library/hooks/useThrottle/useThrottle';
 import s from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/library/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -51,10 +52,19 @@ export const Page = (props: PageProps) => {
       }),
     );
   }, 500);
+
   return (
     <main
       ref={wrapperRef}
-      className={classNames(s.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => s.PageRedesigned,
+          off: () => s.Page
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       id={PAGE_ID}
       data-testid={props['data-testid'] ?? 'Page'}
