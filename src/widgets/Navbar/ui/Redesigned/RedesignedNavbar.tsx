@@ -1,7 +1,7 @@
 import { classNames } from "@/shared/library/ClassNames/classNames"
 import { AvatarDropdown } from "@/features/AvatarDropdown"
 import { NotificationsButton } from "@/features/NotificationsButton"
-import { HStack } from "@/shared/ui/Stack"
+import { HStack } from "@/shared/ui/_deprecated/Stack"
 import cls from './styles/Navbar.new.module.scss'
 
 interface RedesignedNavbarProps {

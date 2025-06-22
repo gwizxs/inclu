@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { getUserInited } from '@/entities/User';
 import { initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
-import { PageLoader } from '@/shared/ui/PageLoader';
+import { PageLoader } from '@/shared/ui/_deprecated/PageLoader';
 import { ToggleFeatures } from '@/shared/library/features';
 import { MainLayout } from '@/shared/layouts';
 

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Input } from '@/shared/ui/Input';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/_deprecated/Input';
+import { Button, ButtonTheme } from '@/shared/ui/_deprecated/Button';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
 import {

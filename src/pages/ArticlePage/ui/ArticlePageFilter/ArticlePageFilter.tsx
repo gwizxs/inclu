@@ -13,8 +13,8 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { useTranslation } from 'react-i18next';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
+import { Card } from '@/shared/ui/_deprecated/Card';
+import { Input } from '@/shared/ui/_deprecated/Input';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { SortOrder } from '@/shared/types/sort';
 import { fetchArticlesList } from '@/pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList';

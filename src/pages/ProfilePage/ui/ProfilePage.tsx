@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/library/ClassNames/classNames';
 import { Page } from '@/widgets/Page/Page';
-import { VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/_deprecated/Stack';
+import { Text } from '@/shared/ui/_deprecated/Text';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

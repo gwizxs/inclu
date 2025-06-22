@@ -4,18 +4,18 @@ import { classNames } from '@/shared/library/ClassNames/classNames';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 
 import { Article, ArticleTextBlock } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Card } from '@/shared/ui/Card';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
-import { AppLink } from '@/shared/ui/AppLink';
+import { Text } from '@/shared/ui/_deprecated/Text';
+import { Avatar } from '@/shared/ui/_deprecated/Avatar';
+import { Card } from '@/shared/ui/_deprecated/Card';
+import { Button, ButtonTheme } from '@/shared/ui/_deprecated/Button';
+import { Icon } from '@/shared/ui/_deprecated/Icon';
+import { AppLink } from '@/shared/ui/_deprecated/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import cls from './ArticleListItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImage } from '@/shared/ui/_deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/_deprecated/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;

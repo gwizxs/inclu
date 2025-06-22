@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Text } from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/_deprecated/Avatar';
+import { Text } from '@/shared/ui/_deprecated/Text';
+import { Skeleton } from '@/shared/ui/_deprecated/Skeleton';
+import { AppLink } from '@/shared/ui/_deprecated/AppLink';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 import classNames from '@/shared/library/ClassNames/classNames';

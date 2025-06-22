@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/library/ClassNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text';
+import { Button, ButtonTheme } from '@/shared/ui/_deprecated/Button';
+import { Text } from '@/shared/ui/_deprecated/Text';
 import { useSelector } from 'react-redux';
 import {
   getProfileReadonly,
@@ -9,7 +9,7 @@ import {
 } from '@/features/editableProfileCard';
 import { useCallback } from 'react';
 import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/_deprecated/Stack';
 import { profileActions } from '@/features/editableProfileCard/model/slice/profileSlice';
 
 interface ProfilePageProps {

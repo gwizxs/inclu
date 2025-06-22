@@ -1,9 +1,9 @@
-import { ButtonSize, ButtonTheme } from "@/shared/ui/Button";
+import { ButtonSize, ButtonTheme } from "@/shared/ui/_deprecated/Button";
 import classNames from "@/shared/library/ClassNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { VStack } from "@/shared/ui/Stack";
+import { Button } from "@/shared/ui/_deprecated/Button";
+import { VStack } from "@/shared/ui/_deprecated/Stack";
 import cls from './styles/Sidebar.module.scss';
-import { ThemeSwitcher } from "@/features/ThemeSwitcher";
+import { ThemeSwitcher } from "@/features/ThemeSwitcher/ui/ThemeSwitcher";
 import { LangSwitcher } from "@/features/LangSwitcher/LangSwitcher";
 
 interface DeprecatedSidebarProps {

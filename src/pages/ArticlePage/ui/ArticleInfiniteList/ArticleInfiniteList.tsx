@@ -9,7 +9,7 @@ import {
 import { useAppDispatch } from '@/shared/library/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/library/hooks/useInitialEffect/useInitialEffect';
 import { ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/_deprecated/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 import { initedArticlePage } from '../../model/services/initedArticlePage/initedArticlePage';
 

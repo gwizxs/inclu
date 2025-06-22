@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import classNames from '@/shared/library/ClassNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/_deprecated/Button';
 import s from './ArticleDetailsPageHeader.module.scss';
 import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
 import { getCanEditArticle } from '../../model/selectors/article';

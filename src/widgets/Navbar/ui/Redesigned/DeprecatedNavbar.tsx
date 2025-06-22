@@ -1,11 +1,11 @@
 import { classNames } from "@/shared/library/ClassNames/classNames"
 import { AvatarDropdown } from "@/features/AvatarDropdown"
-import { AppLinkTheme } from "@/shared/ui/AppLink"
+import { AppLinkTheme } from "@/shared/ui/_deprecated/AppLink"
 import { NotificationsButton } from "@/features/NotificationsButton"
-import { AppLink } from "@/shared/ui/AppLink"
-import { HStack } from "@/shared/ui/Stack"
+import { AppLink } from "@/shared/ui/_deprecated/AppLink"
+import { HStack } from "@/shared/ui/_deprecated/Stack"
 import { getRouteArticleCreate } from "@/shared/const/router"
-import { Text, TextTheme } from "@/shared/ui/Text"
+import { Text, TextTheme } from "@/shared/ui/_deprecated/Text"
 import cls from './styles/Navbar.module.scss'
 import { useTranslation } from "react-i18next"
 

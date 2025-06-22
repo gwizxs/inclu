@@ -2,8 +2,8 @@ import { classNames } from '@/shared/library/ClassNames/classNames';
 import { memo } from 'react';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/_deprecated/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/_deprecated/Button';
 import { ArticleView } from '@/entities/Article/model/consts/consts';
 import cls from './ArticleViewSelector.module.scss';
 

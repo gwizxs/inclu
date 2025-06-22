@@ -1,6 +1,6 @@
 import classNames from '@/shared/library/ClassNames/classNames';
-import { VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/_deprecated/Stack';
+import { Skeleton } from '@/shared/ui/_deprecated/Skeleton';
 import { useNotificationsQuery } from '../../api/NotificationApi';
 import s from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';

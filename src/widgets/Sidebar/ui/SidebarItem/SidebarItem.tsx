@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/_deprecated/AppLink';
 import { memo } from 'react';
 import { classNames } from '@/shared/library/ClassNames/classNames';
 import { useSelector } from 'react-redux';

@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/_deprecated/Avatar';
+import { Dropdown } from '@/shared/ui/_deprecated/Popups';
 import {
   getUserAuthData,
   isUserAdmin,
