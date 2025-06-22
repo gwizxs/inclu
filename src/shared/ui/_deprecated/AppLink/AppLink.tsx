@@ -24,6 +24,12 @@ export const AppLink = memo((props: AppLinkProps) => {
     ...otherProps
   } = props;
 
+      /*
+    * @description: испольхуйте новый компонент
+    * @deprecated
+    */
+
+
   return (
     <Link
       to={to}

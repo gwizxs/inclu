@@ -18,6 +18,11 @@ export function Popover(props: PopoverProps) {
 
   const menuClasses = [mapDirectionClass[direction]];
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <HPopover
       className={classNames(cls.Popover, {}, [className, popupCls.popup])}

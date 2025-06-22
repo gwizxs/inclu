@@ -36,6 +36,11 @@ export const Modal = (props: ModalProps) => {
     return null;
   }
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <Portal>
       <div

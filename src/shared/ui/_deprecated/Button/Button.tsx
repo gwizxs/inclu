@@ -47,6 +47,11 @@ export const Button = memo((props: ButtonProps) => {
     [cls.fullWidth]: fullWidth,
   };
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <button
       type="button"

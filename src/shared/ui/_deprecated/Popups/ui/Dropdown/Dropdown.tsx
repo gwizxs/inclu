@@ -26,6 +26,11 @@ export function Dropdown(props: DropdownProps) {
 
   const menuClasses = [mapDirectionClass[direction]];
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <Menu
       as="div"

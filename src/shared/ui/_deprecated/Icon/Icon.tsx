@@ -11,6 +11,11 @@ interface IconProps extends SVGProps<SVGSVGElement> {
 export const Icon = memo((props: IconProps) => {
   const { className, Svg, inverted, ...otherProps } = props;
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <Svg
       className={classNames(inverted ? cls.inverted : cls.Icon, {}, [

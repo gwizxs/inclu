@@ -57,6 +57,11 @@ export const Text = memo((props: TextProps) => {
     [cls[size]]: true,
   };
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <div className={classNames(cls.Text, mods, [className])}>
       {title && (

@@ -16,6 +16,11 @@ interface TabsProps {
 export const Tabs = (props: TabsProps) => {
   const { className, tabs, value, onTabClick } = props;
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   const clickHandle = useCallback(
     (tab: TabsItem) => {
       return () => {

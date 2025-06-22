@@ -16,6 +16,11 @@ export const Code = memo((props: CodeProps) => {
     navigator.clipboard.writeText(text);
   }, [text]);
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <pre className={classNames(cls.Code, {}, [className])}>
       <Button

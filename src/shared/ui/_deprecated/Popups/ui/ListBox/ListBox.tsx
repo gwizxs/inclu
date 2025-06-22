@@ -39,6 +39,11 @@ export function ListBox(props: ListBoxProps) {
 
   const optionsClasses = [mapDirectionClass[direction]];
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <HStack gap="4">
       {label && <span>{`${label}>`}</span>}

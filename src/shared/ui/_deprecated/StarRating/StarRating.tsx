@@ -38,6 +38,11 @@ export const StarRating = memo((props: StarRatingProps) => {
     }
   };
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>
       {stars.map((starNumber) => (

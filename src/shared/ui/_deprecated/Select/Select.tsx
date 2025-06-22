@@ -37,6 +37,11 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
 
   const mods: Mods = {};
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <div className={classNames(cls.Wrapper, mods, [className])}>
       {label && <span className={cls.label}>{`${label}>`}</span>}

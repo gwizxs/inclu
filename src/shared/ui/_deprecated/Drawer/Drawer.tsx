@@ -107,6 +107,11 @@ const DrawerAsync = (props: DrawerProps) => {
 };
 
 export const Drawer = (props: DrawerProps) => {
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <AnimationProvider>
       <DrawerAsync {...props} />

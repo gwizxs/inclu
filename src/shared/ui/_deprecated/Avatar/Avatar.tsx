@@ -27,6 +27,11 @@ export const Avatar = memo((props: AppLinkProps) => {
     [size],
   );
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   const ErrorFallback = (
     <Icon
       width={size}

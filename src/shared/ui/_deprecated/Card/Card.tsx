@@ -23,6 +23,11 @@ export const Card = memo((props: CardProps) => {
     ...otherProps
   } = props;
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <div
       className={classNames(s.Card, { [s.max]: max }, [className, s[theme]])}

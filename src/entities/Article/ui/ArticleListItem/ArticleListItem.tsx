@@ -43,6 +43,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
 
+    /*
+    * @description: испольхуйте новый компонент
+    * @deprecated
+    */
+
     return (
       <div
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
@@ -80,6 +85,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       </div>
     );
   }
+
+  /*
+  * deprecated
+  */
 
   return (
     <AppLink

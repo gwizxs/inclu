@@ -6,8 +6,15 @@ interface PageLoaderProps {
   className?: string;
 }
 
-export const PageLoader = ({ className }: PageLoaderProps) => (
+export const PageLoader = ({ className }: PageLoaderProps) => {
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
+  return (
   <div className={classNames(cls.PageLoader, {}, [className])}>
     <Loader />
   </div>
 );
+};

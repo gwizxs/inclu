@@ -67,6 +67,11 @@ export const Input = memo((props: InputProps) => {
     [cls.readonly]: readonly,
   };
 
+  /*
+  * @description: испольхуйте новый компонент
+  * @deprecated
+  */
+
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && (

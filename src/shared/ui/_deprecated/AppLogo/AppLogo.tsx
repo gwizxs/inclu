@@ -9,6 +9,11 @@ interface AppLogoProps {
 }
 
 export const AppLogo = memo(({ className }: AppLogoProps) => {
+        /*
+    * @description: испольхуйте новый компонент
+    * @deprecated
+    */
+
     return (
         <HStack
             max
