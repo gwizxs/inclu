@@ -1,19 +1,21 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { ActiclePageGreeting } from './ActiclePageGreeting';
 
-export default {
-    title: 'features/ActiclePageGreeting',
-    component: ActiclePageGreeting,
-    argTypes: {
-        backgroundColor: { control: 'color' },
+const meta: Meta<typeof ActiclePageGreeting> = {
+  title: 'features/ActiclePageGreeting',
+  component: ActiclePageGreeting,
+  decorators: [StoreDecorator({})],
+};
+
+export default meta;
+type Story = StoryObj<typeof ActiclePageGreeting>;
+
+export const Normal: Story = {
+    args: {
+        className: 'default-class',
     },
-} as ComponentMeta<typeof ActiclePageGreeting>;
-
-const Template: ComponentStory<typeof ActiclePageGreeting> = (args) => <ActiclePageGreeting {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {
-   
 };
