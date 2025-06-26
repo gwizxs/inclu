@@ -1,11 +1,11 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import { getSidebarItems } from '../../model/selector/GetSidebarItems';
 import { ToggleFeatures } from '@/shared/library/features';
-import { DeprecatedSidebar } from '../Redesigned/DeprecatedSidebar';
-import { RedisignedSidebar } from '../Redesigned/RedisignedSidebar';
-import { MainLayout } from '@/shared/layouts';
+import { DeprecatedSidebar } from '../Redesigned/SIdebar/DeprecatedSidebar';
+import { RedisignedSidebar } from '../Redesigned/SIdebar/RedisignedSidebar';
+import { getSidebarItems } from '../../model/selector/getSidebarItems';
+
 interface SidebarProps {
   className?: string;
 }
@@ -33,6 +33,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         <RedisignedSidebar
           className={className}
           collapsed={collapsed}
+          itemsList={itemsList}
+          onToggle={onToggle}
         />
       }
 

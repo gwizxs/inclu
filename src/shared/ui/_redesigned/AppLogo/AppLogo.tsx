@@ -1,18 +1,16 @@
 import { memo } from 'react';
 import cls from './AppLogo.module.scss';
-import { HStack } from '../Stack';
-import AppSvg from '@/shared/assets/icons/profile-20-20.svg';
+
 import { classNames } from '@/shared/library/ClassNames/classNames';
+import { HStack } from '../../_deprecated/Stack';
+import AppSvg from '@/shared/assets/icons/profile-20-20.svg';
 
 interface AppLogoProps {
     className?: string;
+    size?: number;
 }
 
-export const AppLogo = memo(({ className }: AppLogoProps) => {
-        /*
-    * @description: испольхуйте новый компонент
-    * @deprecated
-    */
+export const AppLogo = memo(({ className, size = 50 }: AppLogoProps) => {
 
     return (
         <HStack
@@ -22,7 +20,7 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
         >
             <div className={cls.gradientBig} />
             <div className={cls.gradientSmall} />
-            <AppSvg className={cls.appLogo} />
+            <AppSvg className={cls.appLogo} width={size} height={size} color='black' />
         </HStack>
     );
 });

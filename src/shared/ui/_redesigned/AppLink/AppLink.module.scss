@@ -1,0 +1,15 @@
+.primary {
+    color: var(--primary-color);
+
+    &:hover {
+        color: var(--active-redesigned);
+    }
+}
+
+.red {
+    color: var(--cancel-redesigned);
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
